@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto 6 | Joshua</title>
+    <link rel="stylesheet" href="../estilos/web.css">
+</head>
+<body class="pagina-proyectos">
+
+    <header class="header-acerca">
+        <a href="projects.html" class="btn-regresar">◄</a>
+        
+        <h1>PROYECTO 6</h1>
+        
+        <div class="menu-hamburguesa">≡</div>
+    </header>
+
+    
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="cerrar-menu" id="cerrarMenu">X</div>
+        <nav class="menu-links">
+            <a href="home.html">HOME</a>
+            <a href="projects.html">PROYECTOS</a>
+            <a href="acercademi.html">ACERCA DE MÍ</a>
+            <a href="contacto.html">CONTÁCTAME</a>
+        </nav>
+    </div>
+
+    <script>
+        // Busca el botón de las 3 rayitas (en home se llama 'menu', en otras 'menu-hamburguesa')
+        const btnMenu = document.querySelector('.menu-hamburguesa') || document.querySelector('.menu');
+        const overlay = document.getElementById('menuOverlay');
+        const btnCerrar = document.getElementById('cerrarMenu');
+
+        if (btnMenu && overlay && btnCerrar) {
+            // Al hacer clic en las 3 rayitas, aparece el fondo negro
+            btnMenu.addEventListener('click', () => {
+                overlay.classList.add('activo');
+            });
+
+            // Al hacer clic en la X, desaparece el fondo negro
+            btnCerrar.addEventListener('click', () => {
+                overlay.classList.remove('activo');
+            });
+        }
+    </script>
+</body>
+</html>

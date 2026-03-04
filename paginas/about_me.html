@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acerca de Mí | Joshua</title>
+    <link rel="stylesheet" href="../estilos/web.css">
+</head>
+<body class="pagina-acerca">
+
+ <header class="header-acerca">
+        <a href="home.html" class="btn-regresar">◄</a>
+        
+        <h1>ACERCA DE MI</h1>
+        
+        <div class="menu-hamburguesa">≡</div>
+    </header>
+
+    <main class="contenedor-acerca">
+        
+        <div class="col-izq">
+            <h2>Trayectoria y Enfoque Técnico</h2>
+            <p class="texto-consola">Como estudiante de Medios Interactivos, 
+                mi enfoque principal es la programación aplicada al diseño. 
+                Tengo experiencia trabajando en entornos de desarrollo como 
+                Processing para crear sistemas visuales dinámicos. Mi formación 
+                técnica se complementa con una sólida base en post-producción 
+                digital y diseño de interfaces, lo que me permite entender 
+                el producto digital desde el código hasta la estética final.</p>         
+        </div>
+
+        <div class="col-centro">
+            <div class="rombo izq"></div>
+            <div class="rombo der"></div>
+            <div class="rombo izq"></div>
+            <div class="rombo der"></div>
+            <div class="rombo izq"></div>
+            <div class="rombo der"></div>
+            <div class="rombo izq"></div>
+            <div class="rombo der"></div>
+            <div class="rombo izq"></div>
+            <div class="rombo der"></div>
+            <div class="rombo izq"></div>
+        </div>
+
+        <div class="col-der">
+            <h2>Habilidades Técnicas</h2>
+
+            <div class="grupo-habilidades">
+                <h3 class="texto-consola titulo-cat">Creative & Post-Production</h3>
+                <div class="arbol">
+                    <div class="rama">
+                        <span class="etiqueta">Fotografía Profesional:</span>
+                        <p class="texto-consola desc">Captura, composición e iluminación.</p>
+                    </div>
+                    <div class="rama">
+                        <span class="etiqueta">Edición & Revelado:</span>
+                        <p class="texto-consola desc">Adobe Photoshop, Lightroom.</p>
+                    </div>
+                    <div class="rama">
+                        <span class="etiqueta">Video & Post-Producción:</span>
+                        <p class="texto-consola desc">Adobe Premiere Pro, After Effects.</p>
+                    </div>
+                    <div class="rama">
+                        <span class="etiqueta">Diseño Vectorial:</span>
+                        <p class="texto-consola desc">Adobe Illustrator.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grupo-habilidades">
+                <h3 class="texto-consola titulo-cat">Programming & Development</h3>
+                <div class="arbol">
+                    <div class="rama">
+                        <span class="etiqueta">Creative Coding:</span>
+                        <p class="texto-consola desc">Processing (Java-based) para arte generativo e interactividad.</p>
+                    </div>
+                    <div class="rama">
+                        <span class="etiqueta">Lenguajes de Programación:</span>
+                        <p class="texto-consola desc">Java, C++, Visual Basic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="cerrar-menu" id="cerrarMenu">X</div>
+        <nav class="menu-links">
+            <a href="home.html">HOME</a>
+            <a href="projects.html">PROYECTOS</a>
+            <a href="about_me.html">ACERCA DE MÍ</a>
+            <a href="contacto.html">CONTÁCTAME</a>
+        </nav>
+    </div>
+
+    <script>
+        // Busca el botón de las 3 rayitas (en home se llama 'menu', en otras 'menu-hamburguesa')
+        const btnMenu = document.querySelector('.menu-hamburguesa') || document.querySelector('.menu');
+        const overlay = document.getElementById('menuOverlay');
+        const btnCerrar = document.getElementById('cerrarMenu');
+
+        if (btnMenu && overlay && btnCerrar) {
+            // Al hacer clic en las 3 rayitas, aparece el fondo negro
+            btnMenu.addEventListener('click', () => {
+                overlay.classList.add('activo');
+            });
+
+            // Al hacer clic en la X, desaparece el fondo negro
+            btnCerrar.addEventListener('click', () => {
+                overlay.classList.remove('activo');
+            });
+        }
+    </script>
+</body>
+</html>

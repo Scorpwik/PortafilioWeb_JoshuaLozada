@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyectos | Joshua</title>
+    <link rel="stylesheet" href="../estilos/web.css">
+</head>
+    <body class="pagina-proyectos">
+
+        <header class="header-acerca">
+        <a href="home.html" class="btn-regresar">◄</a>
+        
+        <h1>PROYECTOS</h1>
+        
+        <div class="menu-hamburguesa">≡</div>
+    </header>
+
+        <main class="contenedor-proyectos">
+            
+            <section class="galeria-grid">
+                
+                <div class="contenedor-ficha" id="fila-1">
+                    <a href="project1.html" class="caja-proyecto">
+                        <img src="../assets/p1.jpg" alt="Proyecto 1">
+                        <div class="overlay">VER PROYECTO</div>
+                    </a>
+                    <div class="texto-abajo">
+                        <h3>PROYECTO 1</h3>
+                        <p class="texto-consola">Descripción técnica del primer proyecto.</p>
+                    </div>
+                </div>
+
+                <div class="contenedor-ficha">
+                    <a href="project2.html" class="caja-proyecto">
+                        <img src="../assets/p2.jpg" alt="Proyecto 2">
+                        <div class="overlay">VER PROYECTO</div>
+                    </a>
+                    <div class="texto-abajo">
+                        <h3>PROYECTO 2</h3>
+                        <p class="texto-consola">Desarrollo de mecánicas interactivas.</p>
+                    </div>
+                </div>
+
+                <div class="contenedor-ficha">
+                    <a href="project3.html" class="caja-proyecto">
+                        <img src="../assets/p3.jpg" alt="Proyecto 3">
+                        <div class="overlay">VER PROYECTO</div>
+                    </a>
+                    <div class="texto-abajo">
+                        <h3>PROYECTO 3</h3>
+                        <p class="texto-consola">Prototipado de alta fidelidad para app móvil.</p>
+                    </div>
+                </div>
+
+                <div class="contenedor-ficha" id="fila-2">
+                    <a href="project4.html" class="caja-proyecto">
+                        <img src="../assets/p4.jpg" alt="Proyecto 4">
+                        <div class="overlay">VER PROYECTO</div>
+                    </a>
+                    <div class="texto-abajo">
+                        <h3>PROYECTO 4</h3>
+                        <p class="texto-consola">Instalación interactiva con sensores.</p>
+                    </div>
+                </div>
+
+                <div class="contenedor-ficha">
+                    <a href="project5.html" class="caja-proyecto">
+                        <img src="../assets/p5.jpg" alt="Proyecto 5">
+                        <div class="overlay">VER PROYECTO</div>
+                    </a>
+                    <div class="texto-abajo">
+                        <h3>PROYECTO 5</h3>
+                        <p class="texto-consola">Automatización visual y scripts de diseño.</p>
+                    </div>
+                </div>
+
+                <div class="contenedor-ficha">
+                    <a href="project6.html" class="caja-proyecto">
+                        <img src="../assets/p6.jpg" alt="Proyecto 6">
+                        <div class="overlay">VER PROYECTO</div>
+                    </a>
+                    <div class="texto-abajo">
+                        <h3>PROYECTO 6</h3>
+                        <p class="texto-consola">Edición, revelado y post-producción digital.</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <aside class="barra-navegacion">
+                <div class="riel-naranja">
+                    <a href="#fila-1" class="hueco-negro" title="Ir a la Fila 1"></a>
+                    <a href="#fila-2" class="hueco-negro" title="Ir a la Fila 2"></a>
+                    <div class="bola-verde"></div>
+                </div>
+            </aside>
+
+        </main>
+<script>
+        const bola = document.querySelector('.bola-verde');
+        const fila2 = document.getElementById('fila-2');
+        
+        const posArriba = 8;    // Posición top en pixeles del primer hueco
+        const posAbajo = 326;   // Posición top en pixeles del segundo hueco
+        
+        let estaArrastrando = false;
+        let startY, startTop;
+
+        // 1. Sincronizar: Si el usuario hace scroll con la rueda del mouse, la bolita baja sola
+        window.addEventListener('scroll', () => {
+            if (estaArrastrando) return; // Si la tiene agarrada, no interferimos
+            
+            const rect2 = fila2.getBoundingClientRect();
+            // Si la segunda fila ya subió más de la mitad de la pantalla
+            if (rect2.top < window.innerHeight / 2) {
+                bola.style.top = posAbajo + 'px';
+            } else {
+                bola.style.top = posArriba + 'px';
+            }
+        });
+
+        // 2. Lógica para agarrar la bolita (Clic)
+        bola.addEventListener('mousedown', (e) => {
+            estaArrastrando = true;
+            bola.style.transition = 'none'; // Quitamos la suavidad para que siga al mouse exactamente
+            startY = e.clientY;
+            startTop = parseInt(window.getComputedStyle(bola).top, 10) || posArriba;
+            document.body.style.userSelect = 'none'; // Evita que se resalte el texto por error al arrastrar
+        });
+
+        // 3. Lógica para mover la bolita (Arrastrar)
+        window.addEventListener('mousemove', (e) => {
+            if (!estaArrastrando) return;
+            let movimientoY = e.clientY - startY;
+            let nuevoTop = startTop + movimientoY;
+            
+            // Limitamos para que la bolita no se salga del riel naranja
+            if (nuevoTop < posArriba) nuevoTop = posArriba;
+            if (nuevoTop > posAbajo) nuevoTop = posAbajo;
+            
+            bola.style.top = nuevoTop + 'px';
+        });
+
+        // 4. Lógica para soltar la bolita
+        window.addEventListener('mouseup', (e) => {
+            if (!estaArrastrando) return;
+            estaArrastrando = false;
+            bola.style.transition = 'top 0.3s ease'; // Restauramos la suavidad de movimiento
+            document.body.style.userSelect = '';
+            
+            let currentTop = parseInt(bola.style.top, 10);
+            let mitad = (posArriba + posAbajo) / 2;
+
+            // Calculamos: ¿La soltó más cerca de arriba o de abajo?
+            if (currentTop < mitad) {
+                bola.style.top = posArriba + 'px';
+                document.getElementById('fila-1').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                bola.style.top = posAbajo + 'px';
+                document.getElementById('fila-2').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="cerrar-menu" id="cerrarMenu">X</div>
+        <nav class="menu-links">
+            <a href="home.html">HOME</a>
+            <a href="projects.html">PROYECTOS</a>
+            <a href="about_me.html">ACERCA DE MÍ</a>
+            <a href="contacto.html">CONTÁCTAME</a>
+        </nav>
+    </div>
+
+    <script>
+        // Busca el botón de las 3 rayitas (en home se llama 'menu', en otras 'menu-hamburguesa')
+        const btnMenu = document.querySelector('.menu-hamburguesa') || document.querySelector('.menu');
+        const overlay = document.getElementById('menuOverlay');
+        const btnCerrar = document.getElementById('cerrarMenu');
+
+        if (btnMenu && overlay && btnCerrar) {
+            // Al hacer clic en las 3 rayitas, aparece el fondo negro
+            btnMenu.addEventListener('click', () => {
+                overlay.classList.add('activo');
+            });
+
+            // Al hacer clic en la X, desaparece el fondo negro
+            btnCerrar.addEventListener('click', () => {
+                overlay.classList.remove('activo');
+            });
+        }
+    </script>
+    </body>
+</html>
