@@ -9,39 +9,98 @@
 
     <header class="header-acerca">
         <a href="projects.html" class="btn-regresar">◄</a>
-        
         <h1>PROYECTO 1</h1>
-        
         <div class="menu-hamburguesa">≡</div>
     </header>
 
+    <main class="contenedor-proyecto-indv">
+        
+        <section class="hero-proyecto">
+            <div class="columna-visual">
     
+                <div class="caja-video-principal">
+                    <video autoplay loop muted playsinline class="video-principal">
+                    <source src="../assets/gameplay1.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                    </video>
+                </div>
+
+                <div class="etiquetas-tecnologia">
+                <span class="pildora-tech">Processing</span>
+                <span class="pildora-tech">Java</span>
+                </div>
+            </div>
+
+            <div class="columna-info">
+                <h2 class="titulo-proyecto">Videojuego Experimental</h2>
+                
+                <p class="texto-consola descripcion-proyecto">
+                    Videojuego espacial desarrollado desde cero, enfocado en la aplicación práctica de lógicas complejas de programación y diseño interactivo.
+                </p>
+
+                <div class="metadatos-proyecto">
+                    <div class="meta-item">
+                        <span>Rol</span>
+                        <p>Desarrollador Principal</p>
+                    </div>
+                    <div class="meta-item">
+                        <span>Categoría</span>
+                        <p>Creative Coding</p>
+                    </div>
+                    <div class="meta-item">
+                        <span>Año</span>
+                        <p>2026</p>
+                    </div>
+                </div>
+                
+                <a href="https://github.com/Scorpwik" target="_blank" class="btn btn-proyecto">VER REPOSITORIO EN GITHUB ➔</a>
+            </div>
+        </section>
+
+        <section class="caso-estudio">
+            
+            <div class="caja-texto">
+                <h3>El Reto & La Solución</h3>
+                <p class="texto-consola">
+                    El objetivo principal era crear un sistema interactivo robusto que no dependiera de motores gráficos preconstruidos. Para lograr la fluidez del juego y el manejo de múltiples asteroides y enemigos simultáneos, implementé un sistema basado estrictamente en <strong>Programación Orientada a Objetos (POO)</strong>.
+                </p>
+                <p class="texto-consola" style="margin-top: 15px;">
+                    Se desarrollaron clases padre para los elementos del espacio, aplicando conceptos de herencia (child structures) para diversificar los comportamientos de los objetos sin saturar la memoria.
+                </p>
+            </div>
+
+            <div class="caja-texto">
+                <h3>Mecánicas Destacadas</h3>
+                <ul class="lista-mecanicas">
+                    <li><strong>Polimorfismo:</strong> Uso de métodos compartidos para gestionar las colisiones de diferentes tipos de entidades.</li>
+                    <li><strong>Estructuras Child:</strong> Jerarquía de clases para optimizar la creación de niveles y enemigos.</li>
+                    <li><strong>Físicas Personalizadas:</strong> Algoritmos matemáticos escritos en Java para simular aceleración e inercia en gravedad cero.</li>
+                    <li><strong>Sistema de Puntuación:</strong> Tracking de datos en tiempo real.</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
     <div class="menu-overlay" id="menuOverlay">
         <div class="cerrar-menu" id="cerrarMenu">X</div>
         <nav class="menu-links">
-            <a href="home.html">HOME</a>
+            <a href="../index.html">HOME</a>
             <a href="projects.html">PROYECTOS</a>
-            <a href="acercademi.html">ACERCA DE MÍ</a>
+            <a href="about_me.html">ACERCA DE MÍ</a>
             <a href="contacto.html">CONTÁCTAME</a>
         </nav>
     </div>
 
     <script>
-        // Busca el botón de las 3 rayitas (en home se llama 'menu', en otras 'menu-hamburguesa')
-        const btnMenu = document.querySelector('.menu-hamburguesa') || document.querySelector('.menu');
+        const btnMenu = document.querySelector('.menu-hamburguesa');
         const overlay = document.getElementById('menuOverlay');
         const btnCerrar = document.getElementById('cerrarMenu');
 
         if (btnMenu && overlay && btnCerrar) {
-            // Al hacer clic en las 3 rayitas, aparece el fondo negro
-            btnMenu.addEventListener('click', () => {
-                overlay.classList.add('activo');
-            });
-
-            // Al hacer clic en la X, desaparece el fondo negro
-            btnCerrar.addEventListener('click', () => {
-                overlay.classList.remove('activo');
-            });
+            btnMenu.addEventListener('click', () => { overlay.classList.add('activo'); });
+            btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
         }
     </script>
 </body>
