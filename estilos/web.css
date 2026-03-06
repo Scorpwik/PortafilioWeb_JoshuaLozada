@@ -671,5 +671,5 @@ body.pagina-contacto {
 
 .menu-links a:hover {
     color: #FF4500;
-    transform: translateY(-5px); /* Pequeño salto al pasar el mouse */
+    transform: translateY(-5px);
 }
