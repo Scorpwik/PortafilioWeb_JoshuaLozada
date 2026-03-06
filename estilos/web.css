@@ -674,40 +674,44 @@ body.pagina-contacto {
     transform: translateY(-5px);
 }
 /* =========================================
-   8. PÁGINA INDIVIDUAL DE PROYECTO (Layout Completo)
+   8. PÁGINA INDIVIDUAL DE PROYECTO (Layout Completo Ampliado)
    ========================================= */
 
 .contenedor-proyecto-indv {
-    max-width: 1200px;
+    max-width: 1500px; /* PASÓ DE 1200 A 1600: Ocupará mucho más ancho de la pantalla */
     margin: 60px auto;
-    padding: 0 5% 100px 5%;
+    padding: 0 3% 100px 3%; /* Reducimos el padding lateral para pegarlo más a los bordes */
 }
 
 /* --- SECCIÓN SUPERIOR (Hero) --- */
 .hero-proyecto {
     display: flex;
-    gap: 60px;
+    gap: 80px; /* Más espacio para que no se pegue el texto al video gigante */
     align-items: flex-start;
 }
 
 .columna-visual {
-    width: 50%;
+    width: 60%; /* PASÓ DE 50 A 60: El video ahora es mucho más grande */
     display: flex;
     flex-direction: column;
     gap: 25px; 
 }
 
+.caja-video-principal,
 .caja-imagen-principal {
-    width: 150%;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Cambiamos a formato panorámico (16:9) clásico de videojuegos */
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.8);
     border: 1px solid #333;
 }
 
+.video-principal,
 .caja-imagen-principal img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: transform 0.4s ease;
 }
@@ -735,7 +739,7 @@ body.pagina-contacto {
 }
 
 .columna-info {
-    width: 50%;
+    width: 40%; /* PASÓ DE 50 A 40: Ajustamos el texto al nuevo espacio */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -743,7 +747,7 @@ body.pagina-contacto {
 }
 
 .titulo-proyecto {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Título un poco más grande para compensar */
     margin-bottom: 20px;
     color: white;
     text-transform: uppercase;
@@ -751,10 +755,9 @@ body.pagina-contacto {
 }
 
 .descripcion-proyecto {
-    font-size: 16px; 
+    font-size: 17px; 
     line-height: 1.8;
 }
-
 /* --- NUEVO: METADATOS --- */
 .metadatos-proyecto {
     margin-top: 25px;
@@ -790,27 +793,43 @@ body.pagina-contacto {
     font-size: 14px;
 }
 
-/* --- NUEVO: CASO DE ESTUDIO (Abajo) --- */
+/* --- NUEVO: CASO DE ESTUDIO (Abajo - Alineación Perfecta 60/40) --- */
 .caso-estudio {
     margin-top: 80px;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas abajo */
-    gap: 60px;
+    padding-top: 60px;
+    border-top: 1px solid #333; /* Línea horizontal sutil para separar el Hero del Texto */
+    display: flex; /* Usamos flex igual que arriba */
+    gap: 80px; /* Mismo espacio exacto que hay entre el video y el texto superior */
+    align-items: flex-start;
 }
 
-.caja-texto h3 {
+.caja-texto-izq {
+    width: 60%; /* Se alinea perfectamente bajo el video */
+}
+
+.caja-texto-der {
+    width: 40%; /* Se alinea perfectamente bajo los metadatos */
+}
+
+.caja-texto-izq h3, 
+.caja-texto-der h3 {
     color: white;
-    border-left: 4px solid #FF4500; /* Línea decorativa naranja */
+    border-left: 4px solid #FF4500; 
     padding-left: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-family: Arial, sans-serif;
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
+.caja-texto-izq p {
+    text-align: justify; /* Hace que el texto se vea como un bloque cuadrado perfecto */
+    margin-bottom: 15px;
+}
+
 .lista-mecanicas {
-    list-style-type: none; /* Quitamos las viñetas por defecto */
+    list-style-type: none; 
     padding: 0;
 }
 
@@ -819,12 +838,12 @@ body.pagina-contacto {
     font-size: 15px;
     color: #ccc;
     line-height: 1.6;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     position: relative;
-    padding-left: 20px;
+    padding-left: 25px; 
+    text-align: justify; /* Justifica también los items de la lista */
 }
 
-/* Viñeta personalizada naranja */
 .lista-mecanicas li::before {
     content: '►';
     color: #FF4500;
@@ -835,23 +854,230 @@ body.pagina-contacto {
 }
 
 .lista-mecanicas strong {
-    color: white; /* Resalta la palabra clave en blanco */
+    color: white; 
 }
-/* --- AJUSTES PARA EL VIDEO DEL PROYECTO --- */
-.caja-video-principal {
-    width: 100%;
-    /* Mantenemos el aspect-ratio para que encaje perfecto con tu diseño */
-    aspect-ratio: 4 / 3; 
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-    border: 1px solid #333;
+/* =========================================
+   9. PÁGINA INDIVIDUAL (Layout Fotografía Ampliado)
+   ========================================= */
+
+.layout-fotografia {
+    /* Reutiliza el max-width grande de programación para mantenerse simétrico */
+    max-width: 1600px;
+    margin: 60px auto;
+    padding: 0 3% 100px 3%;
+    display: block; /* Quitamos el flex central para usar las secciones Hero y Caso Estudio */
 }
 
-.video-principal {
+/* Columna Izquierda: Texto (40%) */
+.columna-texto-foto {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Columna Derecha: Galería (60%) */
+.columna-galeria-foto {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    /* Reducimos el gap porque el riel ya ocupa espacio */
+    gap: 15px; 
+}
+
+/* Títulos pequeños para las secciones de píldoras */
+.subtitulo-herramientas {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+/* --- LA GALERÍA HORIZONTAL --- */
+.galeria-horizontal {
+    display: flex;
+    gap: 20px; 
+    overflow-x: auto; 
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory; 
+    /* OCULTAR LA BARRA NATIVA FEA */
+    -ms-overflow-style: none;  /* IE y Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.galeria-horizontal::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+}
+
+.galeria-horizontal img {
+    height: 500px; /* Fotos más grandes para impactar más */
+    width: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    flex-shrink: 0; 
+    scroll-snap-align: start; 
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.galeria-horizontal img:hover {
+    transform: scale(1.02); 
+}
+/* =========================================
+   10. GALERÍA SIMÉTRICA CON BLUR Y FLECHAS INTEGRADAS
+   ========================================= */
+
+.carrusel-visor {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2; 
+    border-radius: 10px;
+    
+    /* LA SOLUCIÓN: Hacemos la caja 100% invisible */
+    background-color: transparent; 
+    border: none;
+    box-shadow: none;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    /* 'cover' asegura que el video cubra todo el espacio sin deformarse */
-    object-fit: cover; 
-    display: block;
+    /* contain asegura que nunca se recorte nada de tu obra */
+    object-fit: contain; 
+    opacity: 0;
+    filter: blur(10px); 
+    transition: opacity 0.5s ease, filter 0.5s ease;
+    cursor: zoom-in; 
 }
+
+.slide.activa {
+    opacity: 1;
+    filter: blur(0);
+    z-index: 2;
+}
+
+.slide:hover {
+    transform: scale(1.02); 
+}
+
+/* Flechas enormes, sin fondo y pegadas a los bordes */
+.flecha-interior {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background: transparent; /* Eliminamos el fondo por completo */
+    color: white; 
+    font-size: 55px; /* Flechas mucho más grandes */
+    
+    border: none;
+    padding: 0; /* Quitamos el relleno para que se peguen 100% al borde */
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    
+    /* Sombra vital para que la flecha se lea sobre fotos muy blancas o muy oscuras */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); 
+}
+
+/* Efecto al pasar el mouse: crecen y se pintan de naranja */
+.flecha-interior:hover {
+    background: transparent; /* Sigue sin fondo */
+    color: #FF4500; 
+    transform: translateY(-50%) scale(1.2); /* La flecha hace un pequeño zoom */
+}
+
+/* Pegadas milimétricamente a los costados */
+.flecha-interior.izq { 
+    left: 10px; /* Un pequeñísimo margen para que no choquen con la pantalla */
+}
+
+.flecha-interior.der { 
+    right: 10px; 
+}
+/* =========================================
+   11. LIGHTBOX (VISOR PANTALLA COMPLETA ZOOM)
+   ========================================= */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95); /* Fondo negro casi total para resaltar la foto */
+    z-index: 10000; /* Asegura que esté por encima de TODO en la página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* Al hacer clic en la foto, JavaScript añade esta clase para hacerlo visible */
+.lightbox-overlay.activo {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* La imagen en tamaño gigante */
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 5px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.9);
+    object-fit: contain; /* Para que NUNCA se corte en pantalla completa */
+}
+
+/* Botón de cerrar la pantalla completa (X) */
+.cerrar-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 10001;
+}
+
+.cerrar-lightbox:hover {
+    color: #FF4500;
+    transform: scale(1.1);
+}
+
+/* Flechas para seguir pasando fotos mientras estás en pantalla completa */
+.flecha-lightbox {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #FF4500; /* Flechas naranjas para contrastar */
+    font-size: 60px;
+    cursor: pointer;
+    padding: 20px;
+    transition: 0.3s;
+    z-index: 10001;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.flecha-lightbox:hover {
+    color: white; /* Se vuelven blancas al tocarlas */
+    transform: translateY(-50%) scale(1.2);
+}
+
+.flecha-lightbox.izq { left: 40px; }
+.flecha-lightbox.der { right: 40px; }

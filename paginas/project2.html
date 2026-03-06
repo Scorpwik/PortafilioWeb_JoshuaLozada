@@ -2,47 +2,184 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Proyecto 2 | Joshua</title>
+    <title>Proyecto 2 | Bypass | Joshua</title>
     <link rel="stylesheet" href="../estilos/web.css">
 </head>
 <body class="pagina-proyectos">
 
     <header class="header-acerca">
         <a href="projects.html" class="btn-regresar">◄</a>
-        
         <h1>PROYECTO 2</h1>
-        
         <div class="menu-hamburguesa">≡</div>
     </header>
 
-    
+    <main class="contenedor-proyecto-indv layout-fotografia">
+        
+        <section class="hero-proyecto" style="align-items: center;">
+            
+            <div class="columna-texto-foto">
+                <h2 class="titulo-proyecto">BYPASS</h2>
+                
+                <p class="texto-consola descripcion-proyecto">
+                    La serie 'Bypass' es una exploración visual de la dualidad humana: el contraste entre la imagen pública que proyectamos y nuestro mundo interior. A través de estas fotografías, documento esos momentos de pausa e introspección donde nos quitamos las "máscaras" sociales. El proyecto captura la tranquilidad que existe detrás del ruido cotidiano, destacando aquellos refugios personales —como el deporte y la música— que nos permiten reconectar con nosotros mismos. Es una mirada íntima a esa capa de nuestra identidad que a menudo pasamos por alto (bypass) en el ajetreo diario.
+                </p>
+
+                <div class="metadatos-proyecto" style="margin-bottom: 25px;">
+                    <div class="meta-item">
+                        <span>Rol</span>
+                        <p>Dirección y Fotografía</p>
+                    </div>
+                    <div class="meta-item">
+                        <span>Categoría</span>
+                        <p>Arte Conceptual</p>
+                    </div>
+                </div>
+
+                <div class="bloque-herramientas" style="margin-top: 0;">
+                    <h4 class="subtitulo-herramientas">Post-Producción:</h4>
+                    <div class="etiquetas-tecnologia">
+                        <span class="pildora-tech">Photoshop</span>
+                        <span class="pildora-tech">Lightroom</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columna-galeria-foto">
+                
+                <div class="carrusel-visor">
+                    <button class="flecha-interior izq" id="btnIzq">◄</button>
+                    
+                    <img src="../assets/foto1.jpg" alt="Bypass 1" class="slide activa">
+                    <img src="../assets/foto2.jpg" alt="Bypass 2" class="slide">
+                    <img src="../assets/foto3.jpg" alt="Bypass 3" class="slide">
+                    <img src="../assets/foto4.jpg" alt="Bypass 4" class="slide">
+                    <img src="../assets/foto5.jpg" alt="Bypass 5" class="slide">
+                    <img src="../assets/foto6.jpg" alt="Bypass 6" class="slide">
+                    <img src="../assets/foto7.jpg" alt="Bypass 7" class="slide">
+                    <img src="../assets/foto8.jpg" alt="Bypass 8" class="slide">
+                    <img src="../assets/foto9.jpg" alt="Bypass 9" class="slide">
+
+                    <button class="flecha-interior der" id="btnDer">►</button>
+                </div>
+
+                <div class="bloque-herramientas" style="margin-top: 15px;">
+                    <h4 class="subtitulo-herramientas">Equipo Fotográfico:</h4>
+                    <div class="etiquetas-tecnologia">
+                        <span class="pildora-tech">Canon EOS 90D</span>
+                        <span class="pildora-tech">Lente 18-55mm</span>
+                        <span class="pildora-tech">Lente 18-135mm</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="caso-estudio" style="margin-top: 10px; padding-top: 40px;">
+            <div class="caja-texto-izq">
+                <h3>El Concepto Narrativo</h3>
+                <p class="texto-consola">
+                    "Bypass" nace de la necesidad de documentar la disonancia cognitiva entre la fachada pública que construimos y la realidad psicológica que enfrentamos a puerta cerrada. El proyecto no busca la belleza estética tradicional, sino la representación sincera de la introspección.
+                </p>
+                <p class="texto-consola" style="margin-top: 15px;">
+                    El uso de la luz y la sombra en la composición (revelado digital) fue clave para aislar al sujeto, dejando gran parte del encuadre en una oscuridad profunda que simboliza el espacio personal de pensamiento.
+                </p>
+            </div>
+
+            <div class="caja-texto-der">
+                <h3>Elementos Explorados</h3>
+                <ul class="lista-mecanicas">
+                    <li><strong>La Dualidad:</strong> Retratos que exponen el contraste de las emociones internas frente a las externas.</li>
+                    <li><strong>El Silencio:</strong> Captura de posturas corporales y espacios vacíos que transmiten calma.</li>
+                    <li><strong>Refugios Personales:</strong> El contraste visual cuando intervienen la música y el deporte como vías de escape.</li>
+                    <li><strong>Espacio Negativo:</strong> Uso de encuadres amplios y sombras fuertes para enfocar la atención.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
     <div class="menu-overlay" id="menuOverlay">
         <div class="cerrar-menu" id="cerrarMenu">X</div>
         <nav class="menu-links">
-            <a href="home.html">HOME</a>
+            <a href="../index.html">HOME</a>
             <a href="projects.html">PROYECTOS</a>
-            <a href="acercademi.html">ACERCA DE MÍ</a>
+            <a href="about_me.html">ACERCA DE MÍ</a>
             <a href="contacto.html">CONTÁCTAME</a>
         </nav>
     </div>
 
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="cerrar-lightbox" id="cerrarLightbox">X</div>
+        <button class="flecha-lightbox izq" id="lbBtnIzq">◄</button>
+        <img src="" alt="Zoom" id="lightboxImg">
+        <button class="flecha-lightbox der" id="lbBtnDer">►</button>
+    </div>
+
     <script>
-        // Busca el botón de las 3 rayitas (en home se llama 'menu', en otras 'menu-hamburguesa')
-        const btnMenu = document.querySelector('.menu-hamburguesa') || document.querySelector('.menu');
+        // Menú
+        const btnMenu = document.querySelector('.menu-hamburguesa');
         const overlay = document.getElementById('menuOverlay');
         const btnCerrar = document.getElementById('cerrarMenu');
-
-        if (btnMenu && overlay && btnCerrar) {
-            // Al hacer clic en las 3 rayitas, aparece el fondo negro
-            btnMenu.addEventListener('click', () => {
-                overlay.classList.add('activo');
-            });
-
-            // Al hacer clic en la X, desaparece el fondo negro
-            btnCerrar.addEventListener('click', () => {
-                overlay.classList.remove('activo');
-            });
+        if (btnMenu) {
+            btnMenu.addEventListener('click', () => { overlay.classList.add('activo'); });
+            btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
         }
+
+        // Carrusel
+        const slides = document.querySelectorAll('.slide');
+        const btnIzq = document.getElementById('btnIzq');
+        const btnDer = document.getElementById('btnDer');
+        let indiceActual = 0;
+
+        function mostrarSlide(index) {
+            slides.forEach(slide => slide.classList.remove('activa'));
+            slides[index].classList.add('activa');
+        }
+
+        btnDer.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            indiceActual = (indiceActual + 1) % slides.length;
+            mostrarSlide(indiceActual);
+            actualizarLightbox();
+        });
+
+        btnIzq.addEventListener('click', (e) => {
+            e.stopPropagation();
+            indiceActual = (indiceActual - 1 + slides.length) % slides.length;
+            mostrarSlide(indiceActual);
+            actualizarLightbox();
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightboxOverlay');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const cerrarLb = document.getElementById('cerrarLightbox');
+        const lbBtnIzq = document.getElementById('lbBtnIzq');
+        const lbBtnDer = document.getElementById('lbBtnDer');
+
+        function actualizarLightbox() { lightboxImg.src = slides[indiceActual].src; }
+
+        slides.forEach((slide, index) => {
+            slide.addEventListener('click', () => {
+                indiceActual = index;
+                actualizarLightbox();
+                lightbox.classList.add('activo');
+            });
+        });
+
+        cerrarLb.addEventListener('click', () => { lightbox.classList.remove('activo'); });
+
+        lbBtnDer.addEventListener('click', () => {
+            indiceActual = (indiceActual + 1) % slides.length;
+            mostrarSlide(indiceActual);
+            actualizarLightbox();
+        });
+
+        lbBtnIzq.addEventListener('click', () => {
+            indiceActual = (indiceActual - 1 + slides.length) % slides.length;
+            mostrarSlide(indiceActual);
+            actualizarLightbox();
+        });
     </script>
 </body>
 </html>
