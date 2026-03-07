@@ -2,46 +2,93 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Proyecto 5 | Joshua</title>
+    <title>Proyecto 5 | Navegación Espacial 3D | Joshua</title>
     <link rel="stylesheet" href="../estilos/web.css">
 </head>
 <body class="pagina-proyectos">
 
     <header class="header-acerca">
-        <a href="../index.html" class="btn-regresar">◄</a>
-        
+        <a href="projects.html" class="btn-regresar">◄</a>
         <h1>PROYECTO 5</h1>
-        
         <div class="menu-hamburguesa">≡</div>
     </header>
 
-    
+    <main class="contenedor-proyecto-indv">
+        
+        <section class="layout-animacion-nuevo">
+            
+            <div class="bloque-superior-animacion">
+                <div class="titulo-y-desc">
+                    <h2 class="titulo-proyecto">NAVEGACIÓN ESPACIAL 3D</h2>
+                    <p class="texto-consola descripcion-proyecto">
+                        Este proyecto de animación digital se centró en la creación de una experiencia inmersiva. Utilizando entornos 3D y sistemas de cámaras virtuales en After Effects, logré generar un potente efecto de profundidad de campo. Todos los elementos gráficos presentes en la composición fueron diseñados e ilustrados desde cero. El mayor hito técnico fue la simulación de un viaje espacial, logrando una sensación realista de navegación mediante el solapamiento y paralaje de estrellas distribuidas a lo largo del espacio tridimensional.
+                    </p>
+                </div>
+                
+                <div class="metadatos-proyecto caja-meta-animacion">
+                    <div class="meta-item">
+                        <span>Rol</span>
+                        <p>Animador 3D / Ilustrador</p>
+                    </div>
+                    <div class="meta-item">
+                        <span>Categoría</span>
+                        <p>Motion Graphics / 3D</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bloque-inferior-animacion">
+                
+                <div class="zona-video">
+                    <div class="contenedor-video-yt">
+                        <video controls loop playsinline>
+                            <source src="../assets/v1.mp4" type="video/mp4">
+                            Tu navegador no soporta videos HTML5.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="zona-herramientas">
+                    <div class="bloque-herramientas" style="margin-top: 0;">
+                        <h4 class="subtitulo-herramientas" style="margin-top: 0;">Software Usado:</h4>
+                        <div class="etiquetas-tecnologia">
+                            <span class="pildora-tech">After Effects</span>
+                            <span class="pildora-tech">Illustrator</span>
+                        </div>
+                    </div>
+
+                    <div class="bloque-herramientas" style="margin-top: 0;">
+                        <h4 class="subtitulo-herramientas">Técnicas Implementadas:</h4>
+                        <ul class="lista-mecanicas">
+                            <li><strong>Cámaras 3D:</strong> Manipulación de lentes y profundidad de campo virtuales.</li>
+                            <li><strong>Parallax Espacial:</strong> Solapamiento de capas para generar el efecto de navegación estelar.</li>
+                            <li><strong>Diseño Vectorial:</strong> Creación de elementos gráficos nativos desde cero.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+
     <div class="menu-overlay" id="menuOverlay">
         <div class="cerrar-menu" id="cerrarMenu">X</div>
         <nav class="menu-links">
             <a href="../index.html">HOME</a>
             <a href="projects.html">PROYECTOS</a>
-            <a href="acercademi.html">ACERCA DE MÍ</a>
+            <a href="about_me.html">ACERCA DE MÍ</a>
             <a href="contacto.html">CONTÁCTAME</a>
         </nav>
     </div>
 
     <script>
-        // Busca el botón de las 3 rayitas (en home se llama 'menu', en otras 'menu-hamburguesa')
-        const btnMenu = document.querySelector('.menu-hamburguesa') || document.querySelector('.menu');
+        const btnMenu = document.querySelector('.menu-hamburguesa');
         const overlay = document.getElementById('menuOverlay');
         const btnCerrar = document.getElementById('cerrarMenu');
-
-        if (btnMenu && overlay && btnCerrar) {
-            // Al hacer clic en las 3 rayitas, aparece el fondo negro
-            btnMenu.addEventListener('click', () => {
-                overlay.classList.add('activo');
-            });
-
-            // Al hacer clic en la X, desaparece el fondo negro
-            btnCerrar.addEventListener('click', () => {
-                overlay.classList.remove('activo');
-            });
+        if (btnMenu) {
+            btnMenu.addEventListener('click', () => { overlay.classList.add('activo'); });
+            btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
         }
     </script>
 </body>

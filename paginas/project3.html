@@ -2,47 +2,180 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Proyecto 3 | Joshua</title>
+    <title>Proyecto 3 | Aves de Ecuador | Joshua</title>
     <link rel="stylesheet" href="../estilos/web.css">
 </head>
 <body class="pagina-proyectos">
 
     <header class="header-acerca">
         <a href="projects.html" class="btn-regresar">◄</a>
-        
         <h1>PROYECTO 3</h1>
-        
         <div class="menu-hamburguesa">≡</div>
     </header>
 
-    
+    <main class="contenedor-proyecto-indv layout-fotografia">
+        
+        <section class="hero-proyecto" style="align-items: center;">
+            
+            <div class="columna-texto-foto">
+                <h2 class="titulo-proyecto">AVES: IMPONENCIA NATURAL</h2>
+                
+                <p class="texto-consola descripcion-proyecto">
+                    Este proyecto nació como participación para un certamen ecuatoriano de fotografía de naturaleza. El objetivo principal fue documentar la belleza y la imponencia de las aves en su hábitat, yendo más allá del simple registro biológico. A través del análisis de diferentes especies y sus comportamientos, busqué otorgarles un tratamiento visual impactante que resalte su majestuosidad, sus texturas y el papel vital que juegan en nuestra biodiversidad.
+                </p>
+
+                <div class="metadatos-proyecto" style="margin-bottom: 25px;">
+                    <div class="meta-item">
+                        <span>Rol</span>
+                        <p>Fotógrafo de Naturaleza</p>
+                    </div>
+                    <div class="meta-item">
+                        <span>Categoría</span>
+                        <p>Concurso / Fauna</p>
+                    </div>
+                </div>
+
+                <div class="bloque-herramientas" style="margin-top: 0;">
+                    <h4 class="subtitulo-herramientas">Post-Producción:</h4>
+                    <div class="etiquetas-tecnologia">
+                        <span class="pildora-tech">Photoshop</span>
+                        <span class="pildora-tech">Lightroom</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columna-galeria-foto">
+                
+                <div class="carrusel-visor">
+                    <button class="flecha-interior izq" id="btnIzq">◄</button>
+                    
+                    <img src="../assets/ave1.jpg" alt="Ave 1" class="slide activa">
+                    <img src="../assets/ave2.jpg" alt="Ave 2" class="slide">
+                    <img src="../assets/ave3.jpg" alt="Ave 3" class="slide">
+                    <img src="../assets/ave4.jpg" alt="Ave 4" class="slide">
+                    <img src="../assets/ave5.jpg" alt="Ave 5" class="slide">
+
+                    <button class="flecha-interior der" id="btnDer">►</button>
+                </div>
+
+                <div class="bloque-herramientas" style="margin-top: 15px;">
+                    <h4 class="subtitulo-herramientas">Equipo Fotográfico:</h4>
+                    <div class="etiquetas-tecnologia">
+                        <span class="pildora-tech">Canon EOS 90D</span>
+                        <span class="pildora-tech">Lente 18-55mm</span>
+                        <span class="pildora-tech">Lente 18-135mm</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="caso-estudio" style="margin-top: 10px; padding-top: 40px;">
+            <div class="caja-texto-izq">
+                <h3>El Reto del Entorno</h3>
+                <p class="texto-consola">
+                    La fotografía de vida silvestre exige una inmensa paciencia y adaptabilidad. Captar aves en vuelo o en momentos de quietud requirió dominar las velocidades de obturación altas y aprovechar las horas de luz dorada. 
+                </p>
+                <p class="texto-consola" style="margin-top: 15px;">
+                    El revelado digital se centró en realzar la microtextura de los plumajes y generar un contraste dramático con el fondo natural, separando al sujeto de su entorno para lograr ese toque impactante que exigía el concurso.
+                </p>
+            </div>
+
+            <div class="caja-texto-der">
+                <h3>Elementos Destacados</h3>
+                <ul class="lista-mecanicas">
+                    <li><strong>Composición Natural:</strong> Uso de enmarcado natural proporcionado por la vegetación ecuatoriana.</li>
+                    <li><strong>Velocidad y Precisión:</strong> Congelación de movimiento en escenarios dinámicos.</li>
+                    <li><strong>Colorimetría:</strong> Revelado enfocado en la fidelidad de los colores vibrantes de las especies.</li>
+                    <li><strong>Análisis de Especies:</strong> Estudio previo del comportamiento de las aves para anticipar la toma.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
     <div class="menu-overlay" id="menuOverlay">
         <div class="cerrar-menu" id="cerrarMenu">X</div>
         <nav class="menu-links">
-            <a href="home.html">HOME</a>
+            <a href="../index.html">HOME</a>
             <a href="projects.html">PROYECTOS</a>
-            <a href="acercademi.html">ACERCA DE MÍ</a>
+            <a href="about_me.html">ACERCA DE MÍ</a>
             <a href="contacto.html">CONTÁCTAME</a>
         </nav>
     </div>
 
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="cerrar-lightbox" id="cerrarLightbox">X</div>
+        <button class="flecha-lightbox izq" id="lbBtnIzq">◄</button>
+        <img src="" alt="Zoom Ave" id="lightboxImg">
+        <button class="flecha-lightbox der" id="lbBtnDer">►</button>
+    </div>
+
     <script>
-        // Busca el botón de las 3 rayitas (en home se llama 'menu', en otras 'menu-hamburguesa')
-        const btnMenu = document.querySelector('.menu-hamburguesa') || document.querySelector('.menu');
+        // Menú Hamburguesa
+        const btnMenu = document.querySelector('.menu-hamburguesa');
         const overlay = document.getElementById('menuOverlay');
         const btnCerrar = document.getElementById('cerrarMenu');
-
-        if (btnMenu && overlay && btnCerrar) {
-            // Al hacer clic en las 3 rayitas, aparece el fondo negro
-            btnMenu.addEventListener('click', () => {
-                overlay.classList.add('activo');
-            });
-
-            // Al hacer clic en la X, desaparece el fondo negro
-            btnCerrar.addEventListener('click', () => {
-                overlay.classList.remove('activo');
-            });
+        if (btnMenu) {
+            btnMenu.addEventListener('click', () => { overlay.classList.add('activo'); });
+            btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
         }
+
+        // Carrusel
+        const slides = document.querySelectorAll('.slide');
+        const btnIzq = document.getElementById('btnIzq');
+        const btnDer = document.getElementById('btnDer');
+        let indiceActual = 0;
+
+        function mostrarSlide(index) {
+            slides.forEach(slide => slide.classList.remove('activa'));
+            slides[index].classList.add('activa');
+        }
+
+        btnDer.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            indiceActual = (indiceActual + 1) % slides.length;
+            mostrarSlide(indiceActual);
+            actualizarLightbox();
+        });
+
+        btnIzq.addEventListener('click', (e) => {
+            e.stopPropagation();
+            indiceActual = (indiceActual - 1 + slides.length) % slides.length;
+            mostrarSlide(indiceActual);
+            actualizarLightbox();
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightboxOverlay');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const cerrarLb = document.getElementById('cerrarLightbox');
+        const lbBtnIzq = document.getElementById('lbBtnIzq');
+        const lbBtnDer = document.getElementById('lbBtnDer');
+
+        function actualizarLightbox() { lightboxImg.src = slides[indiceActual].src; }
+
+        slides.forEach((slide, index) => {
+            slide.addEventListener('click', () => {
+                indiceActual = index;
+                actualizarLightbox();
+                lightbox.classList.add('activo');
+            });
+        });
+
+        cerrarLb.addEventListener('click', () => { lightbox.classList.remove('activo'); });
+
+        lbBtnDer.addEventListener('click', () => {
+            indiceActual = (indiceActual + 1) % slides.length;
+            mostrarSlide(indiceActual);
+            actualizarLightbox();
+        });
+
+        lbBtnIzq.addEventListener('click', () => {
+            indiceActual = (indiceActual - 1 + slides.length) % slides.length;
+            mostrarSlide(indiceActual);
+            actualizarLightbox();
+        });
     </script>
 </body>
 </html>

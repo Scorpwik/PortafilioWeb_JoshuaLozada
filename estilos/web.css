@@ -1,4 +1,6 @@
-/* Globales */
+/* =========================================
+   1. GLOBALES Y TIPOGRAFÍA
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +18,7 @@ body {
     animation: gradienteMovimiento 15s ease infinite;
     color: white;
     font-family: Arial, Helvetica, sans-serif; 
-    overflow: hidden; 
+    overflow-x: hidden; 
 }
 
 @keyframes gradienteMovimiento {
@@ -32,13 +34,23 @@ body {
     color: #ccc;
 }
 
-/* Botones y UI Compartida */
+h2 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================
+   2. COMPONENTES UI (BOTONES Y ETIQUETAS)
+   ========================================= */
 .btn-regresar {
     position: absolute;
     left: 50px; 
     background-color: #FF4500;
-    color: white !important; /* Fuerza el color blanco (quita el azul) */
-    text-decoration: none !important; /* Quita la línea de abajo del link */
+    color: white !important;
+    text-decoration: none !important;
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -93,7 +105,26 @@ body {
     box-shadow: 0px 6px 20px rgba(255, 69, 0, 0.6);
 }
 
-/* Navegación (Header) */
+.pildora-cat {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+}
+
+.cat-programacion { border: 1px solid #4da6ff; color: #4da6ff; } 
+.cat-fotografia { border: 1px solid #e6e6e6; color: #e6e6e6; }   
+.cat-animacion { border: 1px solid #FF4500; color: #FF4500; }     
+.cat-proceso { border: 1px solid #555; color: #888; }             
+
+/* =========================================
+   3. NAVEGACIÓN (HEADER Y MENÚ HAMBURGUESA)
+   ========================================= */
 .barra {
     height: 12vh;
     display: flex;
@@ -151,7 +182,71 @@ body {
     cursor: pointer;
 }
 
-/* Home */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 9999; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 0.4s ease;
+}
+
+.menu-overlay.activo {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.cerrar-menu {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cerrar-menu:hover {
+    color: #FF4500;
+    transform: scale(1.1);
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+}
+
+.menu-links a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    transition: 0.3s;
+}
+
+.menu-links a:hover {
+    color: #FF4500;
+    transform: translateY(-5px);
+}
+
+/* =========================================
+   4. PÁGINAS PRINCIPALES
+   ========================================= */
+
+/* --- 4.1 Home --- */
 .contenedor-principal {
     display: flex;
     height: 88vh;
@@ -208,7 +303,7 @@ body {
 
 .info p { margin-bottom: 20px; }
 
-/* Acerca de mi */
+/* --- 4.2 Acerca de Mí --- */
 .pagina-acerca {
     min-height: 100vh;
     overflow-y: auto;
@@ -238,14 +333,6 @@ body {
     max-width: 1100px; 
     margin: 0 auto;
     padding: 0 20px;
-}
-
-h2 {
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 1.4rem;
-    margin-bottom: 25px;
-    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
 }
 
 .col-izq {
@@ -335,164 +422,7 @@ h2 {
     z-index: 2;
 }
 
-/* Proyectos */
-body.pagina-proyectos {
-    min-height: 100vh;
-    overflow-y: auto !important; 
-    overflow-x: hidden;
-}
-
-.contenedor-proyectos {
-    display: flex;
-    padding: 0 3%;
-    gap: 60px;
-    max-width: 1700px;
-    margin: 0 auto;
-    margin-top: 4vh;
-}
-
-.galeria-grid {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 120px 40px; 
-    padding-bottom: 150px;
-}
-
-.contenedor-ficha {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.caja-proyecto {
-    position: relative;
-    aspect-ratio: 4 / 3; 
-    background-color: #222; 
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
-
-.caja-proyecto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8; 
-    transition: 0.3s;
-}
-
-.caja-proyecto:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(255, 69, 0, 0.5);
-}
-
-.caja-proyecto:hover img {
-    opacity: 1; 
-    transform: scale(1.05); 
-}
-
-.overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(255, 69, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    opacity: 0;
-    transition: 0.3s ease;
-}
-
-.caja-proyecto:hover .overlay {
-    opacity: 1;
-}
-
-.texto-abajo h3 {
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.texto-abajo .texto-consola {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #bbb;
-}
-
-/* Nav lateral y animaciones */
-.barra-navegacion {
-    width: 60px;
-    display: flex;
-    justify-content: center;
-}
-
-.riel-naranja {
-    position: sticky;
-    top: calc(50vh - 175px); 
-    width: 18px; 
-    height: 350px; 
-    background-color: #FF4500;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    align-items: center;
-    padding: 10px 0;
-    box-shadow: 0 0 15px rgba(255, 69, 0, 0.4);
-}
-
-.hueco-negro {
-    display: block;
-    width: 12px;
-    height: 12px;
-    background-color: #0d0d0d; 
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.hueco-negro:hover {
-    transform: scale(1.5);
-}
-
-#fila-1, #fila-2 {
-    scroll-margin-top: 150px; 
-}
-
-.bola-verde {
-    position: absolute;
-    width: 16px; 
-    height: 16px;
-    background-color: #2F8867; 
-    border-radius: 50%;
-    top: 8px; /* Posición inicial */
-    transition: top 0.3s ease; /* Transición suave al soltarla */
-    cursor: grab; /* Muestra una manito abierta indicando que se puede agarrar */
-    z-index: 10;
-}
-
-/* Cambia a una manito cerrada cuando le das clic y la arrastras */
-.bola-verde:active {
-    cursor: grabbing; 
-}
-
-@keyframes saltarBola {
-    0%, 49.99%   { top: 8px; }      
-    50%, 100%    { top: 326px; }    
-}
-
-/* Contacto */
+/* --- 4.3 Contacto --- */
 body.pagina-contacto {
     overflow-y: auto !important;
 }
@@ -608,90 +538,136 @@ body.pagina-contacto {
     cursor: pointer;
     border: none;
 }
-/* =========================================
-   7. MENÚ HAMBURGUESA (Pantalla Completa)
-   ========================================= */
-.menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
+
+/* --- 4.4 Portafolio (Grid de Proyectos) --- */
+body.pagina-proyectos {
+    min-height: 100vh;
+    overflow-y: auto !important; 
+}
+
+.contenedor-proyectos {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 0 3%;
+    gap: 10px; 
+    max-width: 1500px;
+    margin: 0 auto;
+    margin-top: 4vh;
+}
+
+.galeria-grid {
     width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95); /* Fondo negro casi sólido */
-    z-index: 9999; /* Por encima de toda la página */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 50px 40px; 
+    padding-bottom: 20px; 
+}
+
+.contenedor-ficha {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contenedor-ficha a {
+    text-decoration: none;
+    display: block;
+}
+
+.caja-proyecto {
+    position: relative;
+    aspect-ratio: 4 / 3; 
+    background-color: #222; 
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.caja-proyecto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8; 
+    transition: 0.3s;
+}
+
+.caja-proyecto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(255, 69, 0, 0.5);
+}
+
+.caja-proyecto:hover img {
+    opacity: 1; 
+    transform: scale(1.05); 
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 69, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* Animación para que aparezca y desaparezca suavemente */
-    opacity: 0;
-    pointer-events: none; /* Inhabilita los clics cuando está invisible */
-    transition: opacity 0.4s ease;
-}
-
-/* Esta clase se activará con JavaScript */
-.menu-overlay.activo {
-    opacity: 1;
-    pointer-events: all;
-}
-
-.cerrar-menu {
-    position: absolute;
-    top: 40px;
-    right: 50px;
-    font-size: 35px;
     color: white;
-    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.caja-proyecto:hover .overlay {
+    opacity: 1;
+}
+
+.texto-abajo h3 {
     font-family: Arial, sans-serif;
     font-weight: bold;
-    transition: 0.3s;
-}
-
-.cerrar-menu:hover {
-    color: #FF4500;
-    transform: scale(1.1);
-}
-
-.menu-links {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-}
-
-.menu-links a {
+    font-size: 20px;
+    margin-bottom: 10px;
     color: white;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 36px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.menu-links a:hover {
-    color: #FF4500;
-    transform: translateY(-5px);
+.texto-abajo .texto-consola {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #bbb;
 }
+
+.fade-in-activo {
+    animation: aparecerSuave 0.6s ease-out forwards;
+}
+
+@keyframes aparecerSuave {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 /* =========================================
-   8. PÁGINA INDIVIDUAL DE PROYECTO (Layout Completo Ampliado)
+   5. PLANTILLAS DE PROYECTOS INDIVIDUALES
    ========================================= */
 
+/* --- 5.1 Estructura Base (Usado en Programación) --- */
 .contenedor-proyecto-indv {
-    max-width: 1500px; /* PASÓ DE 1200 A 1600: Ocupará mucho más ancho de la pantalla */
+    max-width: 1500px; 
     margin: 60px auto;
-    padding: 0 3% 100px 3%; /* Reducimos el padding lateral para pegarlo más a los bordes */
+    padding: 0 3% 100px 3%; 
 }
 
-/* --- SECCIÓN SUPERIOR (Hero) --- */
 .hero-proyecto {
     display: flex;
-    gap: 80px; /* Más espacio para que no se pegue el texto al video gigante */
+    gap: 80px; 
     align-items: flex-start;
 }
 
 .columna-visual {
-    width: 60%; /* PASÓ DE 50 A 60: El video ahora es mucho más grande */
+    width: 60%; 
     display: flex;
     flex-direction: column;
     gap: 25px; 
@@ -700,7 +676,7 @@ body.pagina-contacto {
 .caja-video-principal,
 .caja-imagen-principal {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Cambiamos a formato panorámico (16:9) clásico de videojuegos */
+    aspect-ratio: 16 / 9; 
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.8);
@@ -739,7 +715,7 @@ body.pagina-contacto {
 }
 
 .columna-info {
-    width: 40%; /* PASÓ DE 50 A 40: Ajustamos el texto al nuevo espacio */
+    width: 40%; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -747,7 +723,7 @@ body.pagina-contacto {
 }
 
 .titulo-proyecto {
-    font-size: 3rem; /* Título un poco más grande para compensar */
+    font-size: 3rem; 
     margin-bottom: 20px;
     color: white;
     text-transform: uppercase;
@@ -758,7 +734,7 @@ body.pagina-contacto {
     font-size: 17px; 
     line-height: 1.8;
 }
-/* --- NUEVO: METADATOS --- */
+
 .metadatos-proyecto {
     margin-top: 25px;
     margin-bottom: 35px;
@@ -793,23 +769,17 @@ body.pagina-contacto {
     font-size: 14px;
 }
 
-/* --- NUEVO: CASO DE ESTUDIO (Abajo - Alineación Perfecta 60/40) --- */
 .caso-estudio {
     margin-top: 80px;
     padding-top: 60px;
-    border-top: 1px solid #333; /* Línea horizontal sutil para separar el Hero del Texto */
-    display: flex; /* Usamos flex igual que arriba */
-    gap: 80px; /* Mismo espacio exacto que hay entre el video y el texto superior */
+    border-top: 1px solid #333; 
+    display: flex; 
+    gap: 80px; 
     align-items: flex-start;
 }
 
-.caja-texto-izq {
-    width: 60%; /* Se alinea perfectamente bajo el video */
-}
-
-.caja-texto-der {
-    width: 40%; /* Se alinea perfectamente bajo los metadatos */
-}
+.caja-texto-izq { width: 60%; }
+.caja-texto-der { width: 40%; }
 
 .caja-texto-izq h3, 
 .caja-texto-der h3 {
@@ -824,7 +794,7 @@ body.pagina-contacto {
 }
 
 .caja-texto-izq p {
-    text-align: justify; /* Hace que el texto se vea como un bloque cuadrado perfecto */
+    text-align: justify; 
     margin-bottom: 15px;
 }
 
@@ -841,7 +811,7 @@ body.pagina-contacto {
     margin-bottom: 20px;
     position: relative;
     padding-left: 25px; 
-    text-align: justify; /* Justifica también los items de la lista */
+    text-align: justify; 
 }
 
 .lista-mecanicas li::before {
@@ -853,38 +823,29 @@ body.pagina-contacto {
     font-size: 12px;
 }
 
-.lista-mecanicas strong {
-    color: white; 
-}
-/* =========================================
-   9. PÁGINA INDIVIDUAL (Layout Fotografía Ampliado)
-   ========================================= */
+.lista-mecanicas strong { color: white; }
 
+/* --- 5.2 Plantilla Fotografía --- */
 .layout-fotografia {
-    /* Reutiliza el max-width grande de programación para mantenerse simétrico */
     max-width: 1600px;
     margin: 60px auto;
     padding: 0 3% 100px 3%;
-    display: block; /* Quitamos el flex central para usar las secciones Hero y Caso Estudio */
+    display: block; 
 }
 
-/* Columna Izquierda: Texto (40%) */
 .columna-texto-foto {
     width: 40%;
     display: flex;
     flex-direction: column;
 }
 
-/* Columna Derecha: Galería (60%) */
 .columna-galeria-foto {
     width: 60%;
     display: flex;
     flex-direction: column;
-    /* Reducimos el gap porque el riel ya ocupa espacio */
     gap: 15px; 
 }
 
-/* Títulos pequeños para las secciones de píldoras */
 .subtitulo-herramientas {
     color: white;
     font-family: Arial, sans-serif;
@@ -895,23 +856,20 @@ body.pagina-contacto {
     margin-top: 15px;
 }
 
-/* --- LA GALERÍA HORIZONTAL --- */
 .galeria-horizontal {
     display: flex;
     gap: 20px; 
     overflow-x: auto; 
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory; 
-    /* OCULTAR LA BARRA NATIVA FEA */
-    -ms-overflow-style: none;  /* IE y Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-.galeria-horizontal::-webkit-scrollbar {
-    display: none; /* Chrome, Safari y Opera */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
 }
 
+.galeria-horizontal::-webkit-scrollbar { display: none; }
+
 .galeria-horizontal img {
-    height: 500px; /* Fotos más grandes para impactar más */
+    height: 500px; 
     width: auto;
     border-radius: 10px;
     object-fit: cover;
@@ -922,24 +880,16 @@ body.pagina-contacto {
     transition: transform 0.3s ease;
 }
 
-.galeria-horizontal img:hover {
-    transform: scale(1.02); 
-}
-/* =========================================
-   10. GALERÍA SIMÉTRICA CON BLUR Y FLECHAS INTEGRADAS
-   ========================================= */
+.galeria-horizontal img:hover { transform: scale(1.02); }
 
 .carrusel-visor {
     position: relative;
     width: 100%;
     aspect-ratio: 3 / 2; 
     border-radius: 10px;
-    
-    /* LA SOLUCIÓN: Hacemos la caja 100% invisible */
     background-color: transparent; 
     border: none;
     box-shadow: none;
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -952,7 +902,6 @@ body.pagina-contacto {
     left: 0;
     width: 100%;
     height: 100%;
-    /* contain asegura que nunca se recorte nada de tu obra */
     object-fit: contain; 
     opacity: 0;
     filter: blur(10px); 
@@ -966,56 +915,41 @@ body.pagina-contacto {
     z-index: 2;
 }
 
-.slide:hover {
-    transform: scale(1.02); 
-}
+.slide:hover { transform: scale(1.02); }
 
-/* Flechas enormes, sin fondo y pegadas a los bordes */
 .flecha-interior {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    
-    background: transparent; /* Eliminamos el fondo por completo */
+    background: transparent; 
     color: white; 
-    font-size: 55px; /* Flechas mucho más grandes */
-    
+    font-size: 55px; 
     border: none;
-    padding: 0; /* Quitamos el relleno para que se peguen 100% al borde */
+    padding: 0; 
     cursor: pointer;
     z-index: 10;
     transition: all 0.3s ease;
-    
-    /* Sombra vital para que la flecha se lea sobre fotos muy blancas o muy oscuras */
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); 
 }
 
-/* Efecto al pasar el mouse: crecen y se pintan de naranja */
 .flecha-interior:hover {
-    background: transparent; /* Sigue sin fondo */
+    background: transparent; 
     color: #FF4500; 
-    transform: translateY(-50%) scale(1.2); /* La flecha hace un pequeño zoom */
+    transform: translateY(-50%) scale(1.2); 
 }
 
-/* Pegadas milimétricamente a los costados */
-.flecha-interior.izq { 
-    left: 10px; /* Un pequeñísimo margen para que no choquen con la pantalla */
-}
+.flecha-interior.izq { left: 10px; }
+.flecha-interior.der { right: 10px; }
 
-.flecha-interior.der { 
-    right: 10px; 
-}
-/* =========================================
-   11. LIGHTBOX (VISOR PANTALLA COMPLETA ZOOM)
-   ========================================= */
+/* Lightbox de Fotografía */
 .lightbox-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.95); /* Fondo negro casi total para resaltar la foto */
-    z-index: 10000; /* Asegura que esté por encima de TODO en la página */
+    background: rgba(0, 0, 0, 0.95); 
+    z-index: 10000; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1024,22 +958,19 @@ body.pagina-contacto {
     transition: opacity 0.4s ease;
 }
 
-/* Al hacer clic en la foto, JavaScript añade esta clase para hacerlo visible */
 .lightbox-overlay.activo {
     opacity: 1;
     pointer-events: all;
 }
 
-/* La imagen en tamaño gigante */
 .lightbox-overlay img {
     max-width: 90%;
     max-height: 90vh;
     border-radius: 5px;
     box-shadow: 0 0 40px rgba(0,0,0,0.9);
-    object-fit: contain; /* Para que NUNCA se corte en pantalla completa */
+    object-fit: contain; 
 }
 
-/* Botón de cerrar la pantalla completa (X) */
 .cerrar-lightbox {
     position: absolute;
     top: 30px;
@@ -1058,14 +989,13 @@ body.pagina-contacto {
     transform: scale(1.1);
 }
 
-/* Flechas para seguir pasando fotos mientras estás en pantalla completa */
 .flecha-lightbox {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: #FF4500; /* Flechas naranjas para contrastar */
+    color: #FF4500; 
     font-size: 60px;
     cursor: pointer;
     padding: 20px;
@@ -1075,9 +1005,122 @@ body.pagina-contacto {
 }
 
 .flecha-lightbox:hover {
-    color: white; /* Se vuelven blancas al tocarlas */
+    color: white; 
     transform: translateY(-50%) scale(1.2);
 }
 
 .flecha-lightbox.izq { left: 40px; }
 .flecha-lightbox.der { right: 40px; }
+
+/* --- 5.3 Plantilla Animación (2 Filas Compactas) --- */
+.layout-animacion-nuevo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    width: 100%;
+    margin-top: -35px; 
+}
+
+.bloque-superior-animacion {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    border-bottom: 1px solid #333; 
+    padding-bottom: 15px; 
+}
+
+.titulo-y-desc {
+    width: 70%; 
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-y-desc .titulo-proyecto {
+    font-size: 2.2rem; 
+    margin-bottom: 10px; 
+}
+
+.caja-meta-animacion {
+    width: 30%; 
+    margin: 0;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    padding-top: 5px; 
+}
+
+.bloque-inferior-animacion {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.zona-video {
+    width: 65%; 
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+}
+
+.zona-herramientas {
+    width: 35%; 
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+}
+
+.contenedor-video-yt {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    border: 1px solid #333;
+    background-color: #000;
+}
+
+.contenedor-video-yt iframe,
+.contenedor-video-yt video {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    object-fit: cover;
+}
+
+.controles-clips {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-clip {
+    width: 35px; 
+    height: 35px; 
+    border-radius: 50%;
+    border: 1px solid #FF4500;
+    background-color: transparent;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-clip:hover {
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.btn-clip.activo {
+    background-color: #FF4500;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+}
