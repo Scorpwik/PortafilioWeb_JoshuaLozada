@@ -29,10 +29,11 @@ body {
 
 .texto-consola, .info p, .desc {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 18px; 
+    font-size: 20px; 
     line-height: 1.6;
     color: #ccc;
 }
+
 
 h2 {
     font-family: Arial, sans-serif;
@@ -306,7 +307,7 @@ h2 {
 /* --- 4.2 Acerca de Mí --- */
 .pagina-acerca {
     min-height: 100vh;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 .header-acerca {
@@ -353,13 +354,13 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: space-between; 
-    padding: 10px 0 30px 0; 
+    padding: 10px 0 100px 0; 
 }
 
 .rombo {
     width: 34px;  
     height: 34px; 
-    background: linear-gradient(135deg, #FF4500 0%, #1a0700 100%);
+    background: linear-gradient(135deg, #FF4500 0%, #371002 100%);
     transform: rotate(45deg);
     box-shadow: inset -2px -2px 5px rgba(0,0,0,0.5);
 }
@@ -436,7 +437,7 @@ body.pagina-contacto {
 }
 
 .caja-formulario {
-    background-color: rgba(15, 15, 15, 0.8);
+    background-color: rgba(15, 15, 15, 0.382);
     border: 1px solid #333;
     border-radius: 15px;
     padding: 50px;
@@ -530,6 +531,14 @@ body.pagina-contacto {
     color: white !important;
     font-weight: normal !important;
     cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, text-shadow 0.3s ease;
+}
+
+input[type="radio"]:checked + .label-radio {
+    color: #FF4500 !important;
+    text-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+    opacity: 1;
 }
 
 .btn-enviar {
@@ -543,6 +552,10 @@ body.pagina-contacto {
 body.pagina-proyectos {
     min-height: 100vh;
     overflow-y: auto !important; 
+}
+
+body.sin-scroll {
+    overflow: hidden !important;
 }
 
 .contenedor-proyectos {
@@ -635,7 +648,7 @@ body.pagina-proyectos {
 }
 
 .texto-abajo .texto-consola {
-    font-size: 15px;
+    font-size: 20x;
     line-height: 1.6;
     color: #bbb;
 }
@@ -709,7 +722,7 @@ body.pagina-proyectos {
     padding: 8px 20px;
     border-radius: 20px;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
     box-shadow: 0 0 10px rgba(255, 69, 0, 0.2);
 }
@@ -748,7 +761,7 @@ body.pagina-proyectos {
 .meta-item span {
     color: #FF4500;
     font-family: Arial, sans-serif;
-    font-size: 11px;
+    font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -758,7 +771,7 @@ body.pagina-proyectos {
 
 .meta-item p {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
+    font-size: 17px;
     color: #fff;
     margin: 0;
 }
@@ -770,8 +783,8 @@ body.pagina-proyectos {
 }
 
 .caso-estudio {
-    margin-top: 80px;
-    padding-top: 60px;
+    margin-top: 30px;
+    padding-top: 30px;
     border-top: 1px solid #333; 
     display: flex; 
     gap: 80px; 
@@ -805,7 +818,7 @@ body.pagina-proyectos {
 
 .lista-mecanicas li {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
+    font-size: 20px;
     color: #ccc;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -834,7 +847,7 @@ body.pagina-proyectos {
 }
 
 .columna-texto-foto {
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
@@ -884,7 +897,7 @@ body.pagina-proyectos {
 
 .carrusel-visor {
     position: relative;
-    width: 100%;
+    width: 110%;
     aspect-ratio: 3 / 2; 
     border-radius: 10px;
     background-color: transparent; 
@@ -938,8 +951,8 @@ body.pagina-proyectos {
     transform: translateY(-50%) scale(1.2); 
 }
 
-.flecha-interior.izq { left: 10px; }
-.flecha-interior.der { right: 10px; }
+.flecha-interior.izq { left: 100px; }
+.flecha-interior.der { right: 100px; }
 
 /* Lightbox de Fotografía */
 .lightbox-overlay {
@@ -1089,7 +1102,11 @@ body.pagina-proyectos {
     display: block;
     object-fit: cover;
 }
-
+.contenedor-video-yt.video-vertical {
+    aspect-ratio: 9 / 16;
+    max-width: 350px; 
+    margin: 0 auto;
+}
 .controles-clips {
     display: flex;
     gap: 15px;

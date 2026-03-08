@@ -2,46 +2,97 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Proyecto 6 | Joshua</title>
+    <title>Proyecto 6 | Compostaje Educativo | Joshua</title>
     <link rel="stylesheet" href="../estilos/web.css">
 </head>
 <body class="pagina-proyectos">
 
     <header class="header-acerca">
-        <a href="projects.html" class="btn-regresar">◄</a>
-        
+        <a href="projects.html?page=2" class="btn-regresar">◄</a>
         <h1>PROYECTO 6</h1>
-        
         <div class="menu-hamburguesa">≡</div>
     </header>
 
-    
+    <main class="contenedor-proyecto-indv">
+        
+        <section class="layout-animacion-nuevo">
+            
+            <div class="bloque-superior-animacion">
+                <div class="titulo-y-desc">
+                    <h2 class="titulo-proyecto">COMPOST ORGÁNICO</h2>
+                    <p class="texto-consola descripcion-proyecto">
+                        Pieza de animación educativa diseñada en formato vertical para redes sociales. El objetivo principal fue ilustrar y explicar de forma didáctica el proceso de creación de compost casero utilizando residuos orgánicos cotidianos, como restos de café y cáscaras de plátano. A través del Motion Graphics, busqué concienciar sobre el impacto positivo de estas prácticas en la reducción de nuestra huella de carbono y el cuidado del planeta.
+                    </p>
+                </div>
+                
+                <div class="metadatos-proyecto caja-meta-animacion">
+                    <div class="meta-item">
+                        <span>Rol</span>
+                        <p>Animador / Ilustrador</p>
+                    </div>
+                    <div class="meta-item">
+                        <span>Formato</span>
+                        <p>Vertical (9:16) / RRSS</p>
+                    </div>
+                    <div class="meta-item">
+                        <span>Año</span>
+                        <p>2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bloque-inferior-animacion">
+                
+                <div class="zona-video" style="display: flex; justify-content: center;">
+                    <div class="contenedor-video-yt" style="aspect-ratio: 9 / 16; max-width: 350px; height: auto; margin: 0 auto;">
+                        <video controls loop playsinline style="object-fit: contain; background-color: #000;">
+                            <source src="../assets/v2.mp4" type="video/mp4">
+                            Tu navegador no soporta videos HTML5.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="zona-herramientas">
+                    <div class="bloque-herramientas" style="margin-top: 0;">
+                        <h4 class="subtitulo-herramientas" style="margin-top: 0;">Software Usado:</h4>
+                        <div class="etiquetas-tecnologia">
+                            <span class="pildora-tech">After Effects</span>
+                            <span class="pildora-tech">Illustrator</span>
+                        </div>
+                    </div>
+
+                    <div class="bloque-herramientas" style="margin-top: 0;">
+                        <h4 class="subtitulo-herramientas">Técnicas Implementadas:</h4>
+                        <ul class="lista-mecanicas">
+                            <li><strong>Adaptación Vertical:</strong> Optimización de la composición y el ritmo visual para pantallas móviles (9:16).</li>
+                            <li><strong>Infografía Animada:</strong> Traducción de procesos biológicos complejos a un lenguaje visual amigable y fácil de asimilar.</li>
+                            <li><strong>Diseño de Assets:</strong> Ilustración vectorial desde cero de los elementos orgánicos protagonistas (café, plátano, tierra).</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+
     <div class="menu-overlay" id="menuOverlay">
         <div class="cerrar-menu" id="cerrarMenu">X</div>
         <nav class="menu-links">
-            <a href="home.html">HOME</a>
+            <a href="../index.html">HOME</a>
             <a href="projects.html">PROYECTOS</a>
-            <a href="acercademi.html">ACERCA DE MÍ</a>
+            <a href="about_me.html">ACERCA DE MÍ</a>
             <a href="contacto.html">CONTÁCTAME</a>
         </nav>
     </div>
 
     <script>
-        // Busca el botón de las 3 rayitas (en home se llama 'menu', en otras 'menu-hamburguesa')
-        const btnMenu = document.querySelector('.menu-hamburguesa') || document.querySelector('.menu');
+        const btnMenu = document.querySelector('.menu-hamburguesa');
         const overlay = document.getElementById('menuOverlay');
         const btnCerrar = document.getElementById('cerrarMenu');
-
-        if (btnMenu && overlay && btnCerrar) {
-            // Al hacer clic en las 3 rayitas, aparece el fondo negro
-            btnMenu.addEventListener('click', () => {
-                overlay.classList.add('activo');
-            });
-
-            // Al hacer clic en la X, desaparece el fondo negro
-            btnCerrar.addEventListener('click', () => {
-                overlay.classList.remove('activo');
-            });
+        if (btnMenu) {
+            btnMenu.addEventListener('click', () => { overlay.classList.add('activo'); });
+            btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
         }
     </script>
 </body>

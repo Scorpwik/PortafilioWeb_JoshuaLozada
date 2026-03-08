@@ -48,12 +48,12 @@
                     <div class="contenedor-ficha pagina-1">
                         <a href="project3.html">
                             <div class="caja-proyecto">
-                                <img src="../assets/portada_p3.jpg" alt="Proyecto 3">
+                                <img src="../assets/p3.jpg" alt="Proyecto 3">
                                 <div class="overlay">VER PROYECTO</div>
                             </div>
                             <div class="texto-abajo" style="margin-top: 15px;">
                                 <span class="pildora-cat cat-fotografia">Fotografía</span>
-                                <h3>Aves: Imponencia</h3>
+                                <h3>Imponencia Natural</h3>
                                 <p class="texto-consola">Participación en certamen de naturaleza capturando la biodiversidad, vuelo y texturas de especies endémicas.</p>
                             </div>
                         </a>
@@ -62,7 +62,7 @@
                     <div class="contenedor-ficha pagina-2" style="display: none;">
                         <a href="project4.html">
                             <div class="caja-proyecto">
-                                <img src="../assets/portada_p4.jpg" alt="Proyecto 4">
+                                <img src="../assets/p4.jpg" alt="Proyecto 4">
                                 <div class="overlay">VER PROYECTO</div>
                             </div>
                             <div class="texto-abajo" style="margin-top: 15px;">
@@ -76,27 +76,27 @@
                     <div class="contenedor-ficha pagina-2" style="display: none;">
                         <a href="project5.html">
                             <div class="caja-proyecto">
-                                <img src="../assets/portada_p5.jpg" alt="Proyecto 5">
+                                <img src="../assets/p5.jpg" alt="Proyecto 5">
                                 <div class="overlay">VER PROYECTO</div>
                             </div>
                             <div class="texto-abajo" style="margin-top: 15px;">
                                 <span class="pildora-cat cat-animacion">Animación</span>
-                                <h3>Navegación Espacial 3D</h3>
+                                <h3>Videoclip 3D</h3>
                                 <p class="texto-consola">Experiencia inmersiva que simula un viaje estelar utilizando cámaras virtuales y paralaje profundo en After Effects.</p>
                             </div>
                         </a>
                     </div>
 
                     <div class="contenedor-ficha pagina-2" style="display: none;">
-                        <a style="cursor: default;">
-                            <div class="caja-proyecto" style="opacity: 0.5;"> 
-                                <img src="../assets/placeholder_p6.jpg" alt="Proyecto 6" style="filter: grayscale(100%);">
-                                <div class="overlay" style="background: rgba(0,0,0,0.8);">PRÓXIMAMENTE</div>
+                        <a href="project6.html">
+                            <div class="caja-proyecto">
+                                <img src="../assets/p6.jpg" alt="Proyecto 6">
+                                <div class="overlay">VER PROYECTO</div>
                             </div>
                             <div class="texto-abajo" style="margin-top: 15px;">
-                                <span class="pildora-cat cat-proceso">En Desarrollo</span>
-                                <h3 style="color: #666;">Próximo Proyecto</h3>
-                                <p class="texto-consola" style="color: #444;">Actualmente trabajando en una nueva pieza creativa. Vuelve pronto para descubrir más detalles.</p>
+                                <span class="pildora-cat cat-animacion">Animación</span>
+                                <h3>Compost Educativo</h3>
+                                <p class="texto-consola">Pieza educativa en formato vertical sobre el aprovechamiento del café y plátano para la creación de compost.</p>
                             </div>
                         </a>
                     </div>
@@ -166,9 +166,12 @@
 
                 // 5. Opcional pero recomendado: Disparar la animación en la página 1 apenas entras a la web
                 window.onload = () => {
-                    document.querySelectorAll('.pagina-1').forEach(ficha => {
-                        ficha.classList.add('fade-in-activo');
-                    });
+                    // Leer el parámetro de página de la URL
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const paginaSolicitada = urlParams.get('page') || '1';
+                    
+                    // Cambiar a la página especificada
+                    cambiarPagina(parseInt(paginaSolicitada));
                 };
             </script>
         </body>
