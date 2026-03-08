@@ -7,11 +7,9 @@
 </head>
 <body class="pagina-acerca">
 
- <header class="header-acerca">
+    <header class="header-acerca">
         <a href="../index.html" class="btn-regresar">◄</a>
-        
         <h1>ACERCA DE MI</h1>
-        
         <div class="menu-hamburguesa">≡</div>
     </header>
 
@@ -19,13 +17,12 @@
         
         <div class="col-izq">
             <h2>Trayectoria y Enfoque Técnico</h2>
-            <p class="texto-consola">Como estudiante de Medios Interactivos, 
-                mi enfoque principal es la programación aplicada al diseño. 
-                Tengo experiencia trabajando en entornos de desarrollo como 
-                Processing para crear sistemas visuales dinámicos. Mi formación 
-                técnica se complementa con una sólida base en post-producción 
-                digital y diseño de interfaces, lo que me permite entender 
-                el producto digital desde el código hasta la estética final.</p>         
+            <p class="texto-consola">
+                Como estudiante de Medios Interactivos, mi enfoque principal es la programación aplicada al diseño. 
+                Tengo experiencia trabajando en entornos de desarrollo como Processing para crear sistemas visuales dinámicos. 
+                Mi formación técnica se complementa con una sólida base en post-producción digital y diseño de interfaces, 
+                lo que me permite entender el producto digital desde el código hasta la estética final.
+            </p>        
         </div>
 
         <div class="col-centro">
@@ -83,6 +80,7 @@
         </div>
 
     </main>
+
     <div class="menu-overlay" id="menuOverlay">
         <div class="cerrar-menu" id="cerrarMenu">X</div>
         <nav class="menu-links">
@@ -94,21 +92,13 @@
     </div>
 
     <script>
-        // Busca el botón de las 3 rayitas (en home se llama 'menu', en otras 'menu-hamburguesa')
         const btnMenu = document.querySelector('.menu-hamburguesa') || document.querySelector('.menu');
         const overlay = document.getElementById('menuOverlay');
         const btnCerrar = document.getElementById('cerrarMenu');
 
         if (btnMenu && overlay && btnCerrar) {
-            // Al hacer clic en las 3 rayitas, aparece el fondo negro
-            btnMenu.addEventListener('click', () => {
-                overlay.classList.add('activo');
-            });
-
-            // Al hacer clic en la X, desaparece el fondo negro
-            btnCerrar.addEventListener('click', () => {
-                overlay.classList.remove('activo');
-            });
+            btnMenu.addEventListener('click', () => { overlay.classList.add('activo'); });
+            btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
         }
     </script>
 </body>

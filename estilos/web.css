@@ -1,6 +1,3 @@
-/* =========================================
-   1. GLOBALES Y TIPOGRAFÍA
-   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -34,7 +31,6 @@ body {
     color: #ccc;
 }
 
-
 h2 {
     font-family: Arial, sans-serif;
     font-weight: bold;
@@ -43,9 +39,6 @@ h2 {
     text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
 }
 
-/* =========================================
-   2. COMPONENTES UI (BOTONES Y ETIQUETAS)
-   ========================================= */
 .btn-regresar {
     position: absolute;
     left: 50px; 
@@ -123,9 +116,6 @@ h2 {
 .cat-animacion { border: 1px solid #FF4500; color: #FF4500; }     
 .cat-proceso { border: 1px solid #555; color: #888; }             
 
-/* =========================================
-   3. NAVEGACIÓN (HEADER Y MENÚ HAMBURGUESA)
-   ========================================= */
 .barra {
     height: 12vh;
     display: flex;
@@ -243,11 +233,6 @@ h2 {
     transform: translateY(-5px);
 }
 
-/* =========================================
-   4. PÁGINAS PRINCIPALES
-   ========================================= */
-
-/* --- 4.1 Home --- */
 .contenedor-principal {
     display: flex;
     height: 88vh;
@@ -293,7 +278,9 @@ h2 {
     gap: 70px;
 }
 
-.info { max-width: 320px; }
+.info {
+    max-width: 320px;
+}
 
 .info h3 {
     font-family: Arial, sans-serif;
@@ -302,9 +289,10 @@ h2 {
     letter-spacing: 1px;
 }
 
-.info p { margin-bottom: 20px; }
+.info p {
+    margin-bottom: 20px;
+}
 
-/* --- 4.2 Acerca de Mí --- */
 .pagina-acerca {
     min-height: 100vh;
     overflow: hidden;
@@ -373,7 +361,9 @@ h2 {
     padding-left: 40px; 
 }
 
-.grupo-habilidades { margin-bottom: 40px; }
+.grupo-habilidades {
+    margin-bottom: 40px;
+}
 
 .titulo-cat {
     font-family: 'Courier New', Courier, monospace;
@@ -382,7 +372,9 @@ h2 {
     margin-bottom: 15px;
 }
 
-.arbol { margin-left: 10px; }
+.arbol {
+    margin-left: 10px;
+}
 
 .rama {
     position: relative;
@@ -423,7 +415,6 @@ h2 {
     z-index: 2;
 }
 
-/* --- 4.3 Contacto --- */
 body.pagina-contacto {
     overflow-y: auto !important;
 }
@@ -548,7 +539,6 @@ input[type="radio"]:checked + .label-radio {
     border: none;
 }
 
-/* --- 4.4 Portafolio (Grid de Proyectos) --- */
 body.pagina-proyectos {
     min-height: 100vh;
     overflow-y: auto !important; 
@@ -648,7 +638,7 @@ body.sin-scroll {
 }
 
 .texto-abajo .texto-consola {
-    font-size: 20x;
+    font-size: 20px; 
     line-height: 1.6;
     color: #bbb;
 }
@@ -662,11 +652,6 @@ body.sin-scroll {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* =========================================
-   5. PLANTILLAS DE PROYECTOS INDIVIDUALES
-   ========================================= */
-
-/* --- 5.1 Estructura Base (Usado en Programación) --- */
 .contenedor-proyecto-indv {
     max-width: 1500px; 
     margin: 60px auto;
@@ -838,7 +823,6 @@ body.sin-scroll {
 
 .lista-mecanicas strong { color: white; }
 
-/* --- 5.2 Plantilla Fotografía --- */
 .layout-fotografia {
     max-width: 1600px;
     margin: 60px auto;
@@ -954,7 +938,6 @@ body.sin-scroll {
 .flecha-interior.izq { left: 100px; }
 .flecha-interior.der { right: 100px; }
 
-/* Lightbox de Fotografía */
 .lightbox-overlay {
     position: fixed;
     top: 0;
@@ -1025,7 +1008,6 @@ body.sin-scroll {
 .flecha-lightbox.izq { left: 40px; }
 .flecha-lightbox.der { right: 40px; }
 
-/* --- 5.3 Plantilla Animación (2 Filas Compactas) --- */
 .layout-animacion-nuevo {
     display: flex;
     flex-direction: column;
@@ -1102,11 +1084,13 @@ body.sin-scroll {
     display: block;
     object-fit: cover;
 }
+
 .contenedor-video-yt.video-vertical {
     aspect-ratio: 9 / 16;
     max-width: 350px; 
     margin: 0 auto;
 }
+
 .controles-clips {
     display: flex;
     gap: 15px;

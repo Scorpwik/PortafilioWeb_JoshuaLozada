@@ -1,178 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Proyectos | Joshua</title>
-        <link rel="stylesheet" href="../estilos/web.css">
-    </head>
-        <body class="pagina-proyectos">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyectos | Joshua</title>
+    <link rel="stylesheet" href="../estilos/web.css">
+</head>
+<body class="pagina-proyectos">
 
-            <header class="header-acerca">
-                <a href="../index.html" class="btn-regresar">◄</a>
-                <h1>MIS PROYECTOS</h1>
-                <div class="menu-hamburguesa">≡</div>
-            </header>
+    <header class="header-acerca">
+        <a href="../index.html" class="btn-regresar">◄</a>
+        <h1>MIS PROYECTOS</h1>
+        <div class="menu-hamburguesa">≡</div>
+    </header>
 
-            <main class="contenedor-proyectos">
+    <main class="contenedor-proyectos">
 
-                <div class="galeria-grid">
-                    
-                    <div class="contenedor-ficha pagina-1">
-                        <a href="project1.html">
-                            <div class="caja-proyecto">
-                                <img src="../assets/p1.jpg" alt="Proyecto 1">
-                                <div class="overlay">VER PROYECTO</div>
-                            </div>
-                            <div class="texto-abajo" style="margin-top: 15px;">
-                                <span class="pildora-cat cat-programacion">Programación</span>
-                                <h3>Videojuego Experimental</h3>
-                                <p class="texto-consola">Juego espacial desarrollado desde cero en Java, aplicando lógicas complejas de Programación Orientada a Objetos.</p>
-                            </div>
-                        </a>
+        <div class="galeria-grid">
+            
+            <div class="contenedor-ficha pagina-1">
+                <a href="project1.html">
+                    <div class="caja-proyecto">
+                        <img src="../assets/p1.jpg" alt="Proyecto 1">
+                        <div class="overlay">VER PROYECTO</div>
                     </div>
-
-                    <div class="contenedor-ficha pagina-1">
-                        <a href="project2.html">
-                            <div class="caja-proyecto">
-                                <img src="../assets/p2.jpg" alt="Proyecto 2">
-                                <div class="overlay">VER PROYECTO</div>
-                            </div>
-                            <div class="texto-abajo" style="margin-top: 15px;">
-                                <span class="pildora-cat cat-fotografia">Fotografía</span>
-                                <h3>Bypass: Introspección</h3>
-                                <p class="texto-consola">Exploración visual en blanco y negro sobre la dualidad humana, los refugios personales y la soledad silenciosa.</p>
-                            </div>
-                        </a>
+                    <div class="texto-abajo" style="margin-top: 15px;">
+                        <span class="pildora-cat cat-programacion">Programación</span>
+                        <h3>Videojuego Experimental</h3>
+                        <p class="texto-consola">Juego espacial desarrollado desde cero en Java, aplicando lógicas complejas de Programación Orientada a Objetos.</p>
                     </div>
-
-                    <div class="contenedor-ficha pagina-1">
-                        <a href="project3.html">
-                            <div class="caja-proyecto">
-                                <img src="../assets/p3.jpg" alt="Proyecto 3">
-                                <div class="overlay">VER PROYECTO</div>
-                            </div>
-                            <div class="texto-abajo" style="margin-top: 15px;">
-                                <span class="pildora-cat cat-fotografia">Fotografía</span>
-                                <h3>Imponencia Natural</h3>
-                                <p class="texto-consola">Participación en certamen de naturaleza capturando la biodiversidad, vuelo y texturas de especies endémicas.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="contenedor-ficha pagina-2" style="display: none;">
-                        <a href="project4.html">
-                            <div class="caja-proyecto">
-                                <img src="../assets/p4.jpg" alt="Proyecto 4">
-                                <div class="overlay">VER PROYECTO</div>
-                            </div>
-                            <div class="texto-abajo" style="margin-top: 15px;">
-                                <span class="pildora-cat cat-animacion">Animación</span>
-                                <h3>Conservación Galápagos</h3>
-                                <p class="texto-consola">Serie de clips animados educativos galardonados, diseñados para concienciar a niños sobre la protección de la fauna.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="contenedor-ficha pagina-2" style="display: none;">
-                        <a href="project5.html">
-                            <div class="caja-proyecto">
-                                <img src="../assets/p5.jpg" alt="Proyecto 5">
-                                <div class="overlay">VER PROYECTO</div>
-                            </div>
-                            <div class="texto-abajo" style="margin-top: 15px;">
-                                <span class="pildora-cat cat-animacion">Animación</span>
-                                <h3>Videoclip 3D</h3>
-                                <p class="texto-consola">Experiencia inmersiva que simula un viaje estelar utilizando cámaras virtuales y paralaje profundo en After Effects.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="contenedor-ficha pagina-2" style="display: none;">
-                        <a href="project6.html">
-                            <div class="caja-proyecto">
-                                <img src="../assets/p6.jpg" alt="Proyecto 6">
-                                <div class="overlay">VER PROYECTO</div>
-                            </div>
-                            <div class="texto-abajo" style="margin-top: 15px;">
-                                <span class="pildora-cat cat-animacion">Animación</span>
-                                <h3>Compost Educativo</h3>
-                                <p class="texto-consola">Pieza educativa en formato vertical sobre el aprovechamiento del café y plátano para la creación de compost.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="controles-clips" style="margin-top: 10px; margin-bottom: 50px;">
-                    <button class="btn-clip activo" id="btnPag1" onclick="cambiarPagina(1)">1</button>
-                    <button class="btn-clip" id="btnPag2" onclick="cambiarPagina(2)">2</button>
-                </div>
-
-            </main>
-
-            <div class="menu-overlay" id="menuOverlay">
-                <div class="cerrar-menu" id="cerrarMenu">X</div>
-                <nav class="menu-links">
-                    <a href="../index.html">HOME</a>
-                    <a href="projects.html">PROYECTOS</a>
-                    <a href="about_me.html">ACERCA DE MÍ</a>
-                    <a href="contacto.html">CONTÁCTAME</a>
-                </nav>
+                </a>
             </div>
 
-            <script>
-                // Menú Hamburguesa
-                const btnMenu = document.querySelector('.menu-hamburguesa');
-                const overlay = document.getElementById('menuOverlay');
-                const btnCerrar = document.getElementById('cerrarMenu');
-                if (btnMenu) {
-                    btnMenu.addEventListener('click', () => { overlay.classList.add('activo'); });
-                    btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
-                }
+            <div class="contenedor-ficha pagina-1">
+                <a href="project2.html">
+                    <div class="caja-proyecto">
+                        <img src="../assets/p2.jpg" alt="Proyecto 2">
+                        <div class="overlay">VER PROYECTO</div>
+                    </div>
+                    <div class="texto-abajo" style="margin-top: 15px;">
+                        <span class="pildora-cat cat-fotografia">Fotografía</span>
+                        <h3>Bypass: Introspección</h3>
+                        <p class="texto-consola">Exploración visual en blanco y negro sobre la dualidad humana, los refugios personales y la soledad silenciosa.</p>
+                    </div>
+                </a>
+            </div>
 
-                // Lógica de Paginación con Efecto Fade
-                function cambiarPagina(numPagina) {
-                    const todasLasFichas = document.querySelectorAll('.pagina-1, .pagina-2');
-                    
-                    // 1. Ocultar absolutamente todas las fichas y quitarles la clase de animación
-                    todasLasFichas.forEach(ficha => {
-                        ficha.style.display = 'none';
-                        ficha.classList.remove('fade-in-activo');
-                    });
-                    
-                    // 2. Seleccionar solo las fichas que queremos mostrar
-                    const fichasNuevas = document.querySelectorAll('.pagina-' + numPagina);
-                    
-                    fichasNuevas.forEach(ficha => {
-                        // Las volvemos visibles estructuralmente
-                        ficha.style.display = 'flex'; 
-                        
-                        // Truco de diseñador: Esto fuerza al navegador a "leer" el elemento 
-                        // para que la animación se pueda reiniciar correctamente
-                        void ficha.offsetWidth; 
-                        
-                        // Le inyectamos la clase que dispara el Fade In
-                        ficha.classList.add('fade-in-activo');
-                    });
+            <div class="contenedor-ficha pagina-1">
+                <a href="project3.html">
+                    <div class="caja-proyecto">
+                        <img src="../assets/p3.jpg" alt="Proyecto 3">
+                        <div class="overlay">VER PROYECTO</div>
+                    </div>
+                    <div class="texto-abajo" style="margin-top: 15px;">
+                        <span class="pildora-cat cat-fotografia">Fotografía</span>
+                        <h3>Imponencia Natural</h3>
+                        <p class="texto-consola">Participación en certamen de naturaleza capturando la biodiversidad, vuelo y texturas de especies endémicas.</p>
+                    </div>
+                </a>
+            </div>
 
-                    // 3. Actualizar los botones naranjas
-                    document.getElementById('btnPag1').classList.remove('activo');
-                    document.getElementById('btnPag2').classList.remove('activo');
-                    document.getElementById('btnPag' + numPagina).classList.add('activo');
-                    
-                    // 4. Hacer un scroll suave hacia arriba (ideal si el usuario bajó mucho)
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
+            <div class="contenedor-ficha pagina-2" style="display: none;">
+                <a href="project4.html">
+                    <div class="caja-proyecto">
+                        <img src="../assets/p4.jpg" alt="Proyecto 4">
+                        <div class="overlay">VER PROYECTO</div>
+                    </div>
+                    <div class="texto-abajo" style="margin-top: 15px;">
+                        <span class="pildora-cat cat-animacion">Animación</span>
+                        <h3>Conservación Galápagos</h3>
+                        <p class="texto-consola">Serie de clips animados educativos galardonados, diseñados para concienciar a niños sobre la protección de la fauna.</p>
+                    </div>
+                </a>
+            </div>
 
-                // 5. Opcional pero recomendado: Disparar la animación en la página 1 apenas entras a la web
-                window.onload = () => {
-                    // Leer el parámetro de página de la URL
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const paginaSolicitada = urlParams.get('page') || '1';
-                    
-                    // Cambiar a la página especificada
-                    cambiarPagina(parseInt(paginaSolicitada));
-                };
-            </script>
-        </body>
+            <div class="contenedor-ficha pagina-2" style="display: none;">
+                <a href="project5.html">
+                    <div class="caja-proyecto">
+                        <img src="../assets/p5.jpg" alt="Proyecto 5">
+                        <div class="overlay">VER PROYECTO</div>
+                    </div>
+                    <div class="texto-abajo" style="margin-top: 15px;">
+                        <span class="pildora-cat cat-animacion">Animación</span>
+                        <h3>Videoclip 3D</h3>
+                        <p class="texto-consola">Experiencia inmersiva que simula un viaje estelar utilizando cámaras virtuales y paralaje profundo en After Effects.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="contenedor-ficha pagina-2" style="display: none;">
+                <a href="project6.html">
+                    <div class="caja-proyecto">
+                        <img src="../assets/p6.jpg" alt="Proyecto 6">
+                        <div class="overlay">VER PROYECTO</div>
+                    </div>
+                    <div class="texto-abajo" style="margin-top: 15px;">
+                        <span class="pildora-cat cat-animacion">Animación</span>
+                        <h3>Compost Educativo</h3>
+                        <p class="texto-consola">Pieza educativa en formato vertical sobre el aprovechamiento del café y plátano para la creación de compost.</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="controles-clips" style="margin-top: 10px; margin-bottom: 50px;">
+            <button class="btn-clip activo" id="btnPag1" onclick="cambiarPagina(1)">1</button>
+            <button class="btn-clip" id="btnPag2" onclick="cambiarPagina(2)">2</button>
+        </div>
+
+    </main>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="cerrar-menu" id="cerrarMenu">X</div>
+        <nav class="menu-links">
+            <a href="../index.html">HOME</a>
+            <a href="projects.html">PROYECTOS</a>
+            <a href="about_me.html">ACERCA DE MÍ</a>
+            <a href="contacto.html">CONTÁCTAME</a>
+        </nav>
+    </div>
+
+    <script>
+        // Menú Hamburguesa
+        const btnMenu = document.querySelector('.menu-hamburguesa');
+        const overlay = document.getElementById('menuOverlay');
+        const btnCerrar = document.getElementById('cerrarMenu');
+        
+        if (btnMenu) {
+            btnMenu.addEventListener('click', () => { overlay.classList.add('activo'); });
+            btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
+        }
+
+        // Lógica de Paginación con Efecto Fade
+        function cambiarPagina(numPagina) {
+            const todasLasFichas = document.querySelectorAll('.pagina-1, .pagina-2');
+            
+            // 1. Ocultar absolutamente todas las fichas y quitarles la clase de animación
+            todasLasFichas.forEach(ficha => {
+                ficha.style.display = 'none';
+                ficha.classList.remove('fade-in-activo');
+            });
+            
+            // 2. Seleccionar solo las fichas que queremos mostrar
+            const fichasNuevas = document.querySelectorAll('.pagina-' + numPagina);
+            
+            fichasNuevas.forEach(ficha => {
+                ficha.style.display = 'flex'; 
+                void ficha.offsetWidth; // Truco para reiniciar la animación CSS
+                ficha.classList.add('fade-in-activo');
+            });
+
+            // 3. Actualizar los botones naranjas
+            document.getElementById('btnPag1').classList.remove('activo');
+            document.getElementById('btnPag2').classList.remove('activo');
+            document.getElementById('btnPag' + numPagina).classList.add('activo');
+            
+            // 4. Hacer scroll suave hacia arriba
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Leer parámetro URL para cargar la página correcta al inicio
+        window.onload = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const paginaSolicitada = urlParams.get('page') || '1';
+            cambiarPagina(parseInt(paginaSolicitada));
+        };
+    </script>
+</body>
 </html>

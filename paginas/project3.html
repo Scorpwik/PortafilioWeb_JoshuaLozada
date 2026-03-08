@@ -16,7 +16,6 @@
     <main class="contenedor-proyecto-indv layout-fotografia">
         
         <section class="hero-proyecto" style="align-items: center;">
-            
             <div class="columna-texto-foto">
                 <h2 class="titulo-proyecto">IMPONENCIA NATURAL</h2>
                 
@@ -57,21 +56,20 @@
             </div>
 
             <div class="columna-galeria-foto">
-                
                 <div class="carrusel-visor">
                     <button class="flecha-interior izq" id="btnIzq">◄</button>
                     
                     <img src="../assets/ave1.jpg" alt="Ave 1" class="slide activa">
                     <img src="../assets/ave2.jpg" alt="Ave 2" class="slide">
                     <img src="../assets/ave3.jpg" alt="Ave 3" class="slide">
-                    <img src="../assets/ave4.jpg" alt="Ave 4" class="slide">    
+                    <img src="../assets/ave4.jpg" alt="Ave 4" class="slide">
                     <img src="../assets/ave5.jpg" alt="Ave 5" class="slide">
-                    <img src="../assets/ave6.jpg" alt="Ave 6" class="slide">    
+                    <img src="../assets/ave6.jpg" alt="Ave 6" class="slide">
                     <img src="../assets/ave7.jpg" alt="Ave 7" class="slide">
                     <img src="../assets/ave8.jpg" alt="Ave 8" class="slide">
+
                     <button class="flecha-interior der" id="btnDer">►</button>
                 </div>
-
             </div>
         </section>
 
@@ -117,7 +115,6 @@
     </div>
 
     <script>
-        // Menú Hamburguesa
         const btnMenu = document.querySelector('.menu-hamburguesa');
         const overlay = document.getElementById('menuOverlay');
         const btnCerrar = document.getElementById('cerrarMenu');
@@ -126,7 +123,6 @@
             btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
         }
 
-        // Carrusel
         const slides = document.querySelectorAll('.slide');
         const btnIzq = document.getElementById('btnIzq');
         const btnDer = document.getElementById('btnDer');
@@ -151,7 +147,6 @@
             actualizarLightbox();
         });
 
-        // Lightbox
         const lightbox = document.getElementById('lightboxOverlay');
         const lightboxImg = document.getElementById('lightboxImg');
         const cerrarLb = document.getElementById('cerrarLightbox');

@@ -5,99 +5,90 @@
     <title>Contacto | Joshua</title>
     <link rel="stylesheet" href="../estilos/web.css">
 </head>
-    <body class="pagina-contacto">
+<body class="pagina-contacto">
 
-        <header class="header-acerca">
+    <header class="header-acerca">
         <a href="../index.html" class="btn-regresar">◄</a>
-        
         <h1>CONTACTO</h1>
-        
         <div class="menu-hamburguesa">≡</div>
     </header>
 
-        <main class="contenedor-contacto">
-            
-            <div class="caja-formulario">
-                <h2>Hablemos</h2>
-                <p class="texto-consola" style="text-align: center; margin-bottom: 30px;">
-                    Llena los datos y envíame un correo directo.
-                </p>
+    <main class="contenedor-contacto">
+        
+        <div class="caja-formulario">
+            <h2>Hablemos</h2>
+            <p class="texto-consola" style="text-align: center; margin-bottom: 30px;">
+                Llena los datos y envíame un correo directo.
+            </p>
 
-                <form action="mailto:joshualolcrac@gmail.com" method="post" enctype="text/plain">
-                    
-                    <div class="grupo-form">
-                        <label for="nombre">Nombre:</label>
-                        <div class="input-con-boton">
-                            <input type="text" id="nombre" name="Nombre" placeholder="Ej. Joshua Lozada">
-                            <button type="button" class="btn-borrar" onclick="document.getElementById('nombre').value=''">X</button>
-                        </div>
+            <form action="mailto:joshualolcrac@gmail.com" method="post" enctype="text/plain">
+                
+                <div class="grupo-form">
+                    <label for="nombre">Nombre:</label>
+                    <div class="input-con-boton">
+                        <input type="text" id="nombre" name="Nombre" placeholder="Ej. Joshua Lozada">
+                        <button type="button" class="btn-borrar" onclick="document.getElementById('nombre').value=''">X</button>
                     </div>
-
-                    <div class="grupo-form">
-                        <label for="telefono">Número de Teléfono:</label>
-                        <div class="input-con-boton">
-                            <input type="tel" id="telefono" name="Telefono" placeholder="Ej. 099 123 4567">
-                            <button type="button" class="btn-borrar" onclick="document.getElementById('telefono').value=''">X</button>
-                        </div>
-                    </div>
-
-                    <div class="grupo-form">
-                        <label>Sexo:</label>
-                        <div class="grupo-radios">
-                            <input type="radio" name="Sexo" id="masculino" value="Masculino">
-                            <label for="masculino" class="label-radio">Masculino</label>
-                            
-                            <input type="radio" name="Sexo" id="femenino" value="Femenino">
-                            <label for="femenino" class="label-radio">Femenino</label>
-
-                            <input type="radio" name="Sexo" id="otro" value="Otro">
-                            <label for="otro" class="label-radio">Otro</label>
-                        </div>
-                    </div>
-
-                    <div class="grupo-form">
-                        <label for="descripcion">Breve descripción de lo que buscas:</label>
-                        <div class="input-con-boton">
-                            <textarea id="descripcion" name="Descripcion" rows="4" placeholder="Escribe aquí los detalles..."></textarea>
-                            <button type="button" class="btn-borrar btn-borrar-txt" onclick="document.getElementById('descripcion').value=''">X</button>
-                        </div>
-                    </div>
-
-                    <div style="text-align: center; margin-top: 40px;">
-                        <input type="submit" value="ENVIAR EMAIL" class="btn btn-enviar">
-                    </div>
-                    
-                </form>
-            </div>
-
-        </main>
-            <div class="menu-overlay" id="menuOverlay">
-                <div class="cerrar-menu" id="cerrarMenu">X</div>
-                    <nav class="menu-links">
-                        <a href="../index.html">HOME</a>
-                        <a href="projects.html">PROYECTOS</a>
-                        <a href="about_me.html">ACERCA DE MÍ</a>
-                        <a href="contacto.html">CONTÁCTAME</a>
-                    </nav>
                 </div>
 
-                <script>
-                    // Busca el botón de las 3 rayitas (en home se llama 'menu', en otras 'menu-hamburguesa')
-                    const btnMenu = document.querySelector('.menu-hamburguesa') || document.querySelector('.menu');
-                    const overlay = document.getElementById('menuOverlay');
-                    const btnCerrar = document.getElementById('cerrarMenu');
+                <div class="grupo-form">
+                    <label for="telefono">Número de Teléfono:</label>
+                    <div class="input-con-boton">
+                        <input type="tel" id="telefono" name="Telefono" placeholder="Ej. 099 123 4567">
+                        <button type="button" class="btn-borrar" onclick="document.getElementById('telefono').value=''">X</button>
+                    </div>
+                </div>
 
-                    if (btnMenu && overlay && btnCerrar) {
-                        // Al hacer clic en las 3 rayitas, aparece el fondo negro
-                        btnMenu.addEventListener('click', () => {
-                            overlay.classList.add('activo');
-                        });
+                <div class="grupo-form">
+                    <label>Sexo:</label>
+                    <div class="grupo-radios">
+                        <input type="radio" name="Sexo" id="masculino" value="Masculino">
+                        <label for="masculino" class="label-radio">Masculino</label>
+                        
+                        <input type="radio" name="Sexo" id="femenino" value="Femenino">
+                        <label for="femenino" class="label-radio">Femenino</label>
 
-                        // Al hacer clic en la X, desaparece el fondo negro
-                        btnCerrar.addEventListener('click', () => {
-                            overlay.classList.remove('activo');
-                        });
-                    }
-                </script>
-    </body>
+                        <input type="radio" name="Sexo" id="otro" value="Otro">
+                        <label for="otro" class="label-radio">Otro</label>
+                    </div>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="descripcion">Breve descripción de lo que buscas:</label>
+                    <div class="input-con-boton">
+                        <textarea id="descripcion" name="Descripcion" rows="4" placeholder="Escribe aquí los detalles..."></textarea>
+                        <button type="button" class="btn-borrar btn-borrar-txt" onclick="document.getElementById('descripcion').value=''">X</button>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <input type="submit" value="ENVIAR EMAIL" class="btn btn-enviar">
+                </div>
+                
+            </form>
+        </div>
+
+    </main>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="cerrar-menu" id="cerrarMenu">X</div>
+        <nav class="menu-links">
+            <a href="../index.html">HOME</a>
+            <a href="projects.html">PROYECTOS</a>
+            <a href="about_me.html">ACERCA DE MÍ</a>
+            <a href="contacto.html">CONTÁCTAME</a>
+        </nav>
+    </div>
+
+    <script>
+        const btnMenu = document.querySelector('.menu-hamburguesa') || document.querySelector('.menu');
+        const overlay = document.getElementById('menuOverlay');
+        const btnCerrar = document.getElementById('cerrarMenu');
+
+        if (btnMenu && overlay && btnCerrar) {
+            btnMenu.addEventListener('click', () => { overlay.classList.add('activo'); });
+            btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
+        }
+    </script>
+</body>
 </html>

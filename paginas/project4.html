@@ -5,7 +5,7 @@
     <title>Proyecto 4 | Animación Galápagos | Joshua</title>
     <link rel="stylesheet" href="../estilos/web.css">
 </head>
-<body class="pagina-proyectos sin-scroll">
+<body class="pagina-proyectos">
 
     <header class="header-acerca">
         <a href="projects.html?page=2" class="btn-regresar">◄</a>
@@ -16,7 +16,6 @@
     <main class="contenedor-proyecto-indv">
         
         <section class="layout-animacion-nuevo">
-            
             <div class="bloque-superior-animacion">
                 <div class="titulo-y-desc">
                     <h2 class="titulo-proyecto">CONSERVACIÓN GALÁPAGOS</h2>
@@ -42,7 +41,6 @@
             </div>
 
             <div class="bloque-inferior-animacion">
-                
                 <div class="zona-video">
                     <div class="contenedor-video-yt">
                         <iframe id="reproductorYT" src="https://www.youtube.com/embed/6g2zuxlX5iE?si=ZIDxcf9Ar4rWJq2E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -73,7 +71,6 @@
                         </ul>
                     </div>
                 </div>
-                
             </div>
         </section>
 
@@ -90,40 +87,33 @@
     </div>
 
     <script>
-        // 1. Lógica del Menú
         const btnMenu = document.querySelector('.menu-hamburguesa');
         const overlay = document.getElementById('menuOverlay');
         const btnCerrar = document.getElementById('cerrarMenu');
+        
         if (btnMenu) {
             btnMenu.addEventListener('click', () => { overlay.classList.add('activo'); });
             btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
         }
 
-        // 2. Lógica de los 3 Clips de YouTube
         const reproductor = document.getElementById('reproductorYT');
         const botonesClips = document.querySelectorAll('.btn-clip');
 
-        // AQUÍ PON TUS 3 ENLACES EMBED DE YOUTUBE:
         const enlacesVideos = [
-            "https://www.youtube.com/embed/6g2zuxlX5iE?si=ZIDxcf9Ar4rWJq2E", // Video 1
-            "https://www.youtube.com/embed/9JOxnMCVwuo?si=c2KGihdMXwhYwnLO", // Video 2
-            "https://www.youtube.com/embed/J--BRRlv5PQ?si=Phkl5llVPNnZI9p1"   // Video 3
+            "https://www.youtube.com/embed/6g2zuxlX5iE?si=ZIDxcf9Ar4rWJq2E",
+            "https://www.youtube.com/embed/9JOxnMCVwuo?si=c2KGihdMXwhYwnLO",
+            "https://www.youtube.com/embed/J--BRRlv5PQ?si=Phkl5llVPNnZI9p1"  
         ];
 
         botonesClips.forEach(boton => {
             boton.addEventListener('click', () => {
-                // Quitar el relleno naranja a todos los botones
                 botonesClips.forEach(b => b.classList.remove('activo'));
-                
-                // Ponerle el relleno naranja solo al botón que clickeaste
                 boton.classList.add('activo');
                 
-                // Cambiar el video en la pantalla
                 const indice = boton.getAttribute('data-index');
                 reproductor.src = enlacesVideos[indice];
             });
         });
     </script>
-    
 </body>
 </html>

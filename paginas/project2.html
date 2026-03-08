@@ -16,18 +16,11 @@
     <main class="contenedor-proyecto-indv layout-fotografia">
         
         <section class="hero-proyecto" style="align-items: center;">
-            
             <div class="columna-texto-foto">
                 <h2 class="titulo-proyecto">BYPASS</h2>
                 
                 <p class="texto-consola descripcion-proyecto">
-                    La serie 'Bypass' es una exploración visual de la dualidad humana:
-                     el contraste entre la imagen pública que proyectamos y nuestro mundo interior.
-                      A través de estas fotografías, documento esos momentos de pausa e introspección
-                       donde nos quitamos las "máscaras" sociales. El proyecto captura la tranquilidad 
-                       que existe detrás del ruido cotidiano, destacando aquellos refugios personales 
-                       "como el deporte y la música" que nos permiten reconectar con nosotros mismos.
-                        Es una mirada íntima a esa capa de nuestra identidad que a menudo pasamos por alto (bypass) en el ajetreo diario.
+                    La serie 'Bypass' es una exploración visual de la dualidad humana: el contraste entre la imagen pública que proyectamos y nuestro mundo interior. A través de estas fotografías, documento esos momentos de pausa e introspección donde nos quitamos las "máscaras" sociales. El proyecto captura la tranquilidad que existe detrás del ruido cotidiano, destacando aquellos refugios personales —como el deporte y la música— que nos permiten reconectar con nosotros mismos. Es una mirada íntima a esa capa de nuestra identidad que a menudo pasamos por alto en el ajetreo diario.
                 </p>
 
                 <div class="metadatos-proyecto" style="margin-bottom: 25px;">
@@ -63,7 +56,6 @@
             </div>
 
             <div class="columna-galeria-foto">
-                
                 <div class="carrusel-visor">
                     <button class="flecha-interior izq" id="btnIzq">◄</button>
                     
@@ -79,9 +71,6 @@
 
                     <button class="flecha-interior der" id="btnDer">►</button>
                 </div>
-
-                
-
             </div>
         </section>
 
@@ -127,7 +116,6 @@
     </div>
 
     <script>
-        // Menú
         const btnMenu = document.querySelector('.menu-hamburguesa');
         const overlay = document.getElementById('menuOverlay');
         const btnCerrar = document.getElementById('cerrarMenu');
@@ -136,7 +124,6 @@
             btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
         }
 
-        // Carrusel
         const slides = document.querySelectorAll('.slide');
         const btnIzq = document.getElementById('btnIzq');
         const btnDer = document.getElementById('btnDer');
@@ -161,7 +148,6 @@
             actualizarLightbox();
         });
 
-        // Lightbox
         const lightbox = document.getElementById('lightboxOverlay');
         const lightboxImg = document.getElementById('lightboxImg');
         const cerrarLb = document.getElementById('cerrarLightbox');
