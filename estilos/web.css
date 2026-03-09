@@ -1,3 +1,6 @@
+/* =========================================
+   1. ESTILOS GENERALES Y FONDOS
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -39,6 +42,10 @@ h2 {
     text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
 }
 
+
+/* =========================================
+   2. BOTONES Y ETIQUETAS
+   ========================================= */
 .btn-regresar {
     position: absolute;
     left: 50px; 
@@ -99,6 +106,7 @@ h2 {
     box-shadow: 0px 6px 20px rgba(255, 69, 0, 0.6);
 }
 
+/* Etiquetas de Categorías (Programación, Fotografía, etc.) */
 .pildora-cat {
     display: inline-block;
     font-family: Arial, sans-serif;
@@ -116,6 +124,10 @@ h2 {
 .cat-animacion { border: 1px solid #FF4500; color: #FF4500; }     
 .cat-proceso { border: 1px solid #555; color: #888; }             
 
+
+/* =========================================
+   3. NAVEGACIÓN Y MENÚ HAMBURGUESA
+   ========================================= */
 .barra {
     height: 12vh;
     display: flex;
@@ -166,6 +178,7 @@ h2 {
     transform: scale(1.1);
 }
 
+/* Menú oculto (Overlay) */
 .menu, .menu-hamburguesa {
     position: absolute;
     right: 50px;
@@ -233,6 +246,10 @@ h2 {
     transform: translateY(-5px);
 }
 
+
+/* =========================================
+   4. PÁGINA DE INICIO (HOME)
+   ========================================= */
 .contenedor-principal {
     display: flex;
     height: 88vh;
@@ -293,6 +310,10 @@ h2 {
     margin-bottom: 20px;
 }
 
+
+/* =========================================
+   5. PÁGINA "ACERCA DE MÍ"
+   ========================================= */
 .pagina-acerca {
     min-height: 100vh;
     overflow: hidden;
@@ -336,6 +357,7 @@ h2 {
     margin-bottom: 40px;
 }
 
+/* Decoración central (Rombos) */
 .col-centro {
     width: 16%; 
     display: flex;
@@ -372,6 +394,7 @@ h2 {
     margin-bottom: 15px;
 }
 
+/* Diagrama de árbol de habilidades */
 .arbol {
     margin-left: 10px;
 }
@@ -415,6 +438,10 @@ h2 {
     z-index: 2;
 }
 
+
+/* =========================================
+   6. PÁGINA DE CONTACTO
+   ========================================= */
 body.pagina-contacto {
     overflow-y: auto !important;
 }
@@ -489,6 +516,7 @@ body.pagina-contacto {
     resize: vertical;
 }
 
+/* Botones del formulario */
 .btn-borrar {
     background-color: transparent;
     border: 1px solid #555;
@@ -539,6 +567,10 @@ input[type="radio"]:checked + .label-radio {
     border: none;
 }
 
+
+/* =========================================
+   7. GALERÍA DE PROYECTOS (PORTAFOLIO)
+   ========================================= */
 body.pagina-proyectos {
     min-height: 100vh;
     overflow-y: auto !important; 
@@ -559,6 +591,7 @@ body.sin-scroll {
     margin-top: 4vh;
 }
 
+/* Cuadrícula (Grid) de las tarjetas */
 .galeria-grid {
     width: 100%;
     display: grid;
@@ -606,6 +639,7 @@ body.sin-scroll {
     transform: scale(1.05); 
 }
 
+/* Fondo naranja al pasar el mouse */
 .overlay {
     position: absolute;
     top: 0; left: 0;
@@ -643,6 +677,7 @@ body.sin-scroll {
     color: #bbb;
 }
 
+/* Animación de cambio de página */
 .fade-in-activo {
     animation: aparecerSuave 0.6s ease-out forwards;
 }
@@ -652,6 +687,12 @@ body.sin-scroll {
     100% { opacity: 1; transform: translateY(0); }
 }
 
+
+/* =========================================
+   8. PLANTILLAS DE PROYECTOS INDIVIDUALES
+   ========================================= */
+
+/* --- 8.1 Diseño Base (Proyecto 1) --- */
 .contenedor-proyecto-indv {
     max-width: 1500px; 
     margin: 60px auto;
@@ -823,6 +864,7 @@ body.sin-scroll {
 
 .lista-mecanicas strong { color: white; }
 
+/* --- 8.2 Diseño Fotografía (Proyectos 2 y 3) --- */
 .layout-fotografia {
     max-width: 1600px;
     margin: 60px auto;
@@ -853,6 +895,7 @@ body.sin-scroll {
     margin-top: 15px;
 }
 
+/* --- 8.3 Carrusel y Lightbox de Fotos --- */
 .galeria-horizontal {
     display: flex;
     gap: 20px; 
@@ -938,6 +981,7 @@ body.sin-scroll {
 .flecha-interior.izq { left: 100px; }
 .flecha-interior.der { right: 100px; }
 
+/* Vista ampliada de la imagen (Lightbox) */
 .lightbox-overlay {
     position: fixed;
     top: 0;
@@ -1008,6 +1052,7 @@ body.sin-scroll {
 .flecha-lightbox.izq { left: 40px; }
 .flecha-lightbox.der { right: 40px; }
 
+/* --- 8.4 Diseño Animación (Proyectos 4, 5 y 6) --- */
 .layout-animacion-nuevo {
     display: flex;
     flex-direction: column;
@@ -1066,6 +1111,7 @@ body.sin-scroll {
     gap: 25px; 
 }
 
+/* Contenedor adaptativo para videos */
 .contenedor-video-yt {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -1091,6 +1137,7 @@ body.sin-scroll {
     margin: 0 auto;
 }
 
+/* Botones para cambiar videos (Ej. Proyecto 4) */
 .controles-clips {
     display: flex;
     gap: 15px;
