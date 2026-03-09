@@ -20,17 +20,17 @@
         <div class="menu-hamburguesa">≡</div>
     </nav>
 
-    <div class="contenedor-principal">
-        <div class="bloque-izq">
+    <main class="contenedor-principal">
+        <section class="bloque-izq">
             <h1>SOY JOSHUA,<br>DISEÑADOR WEB</h1>
             <a href="paginas/projects.html" class="flecha">▼</a>
-        </div>
+        </section>
 
-        <div class="bloque-foto">
+        <section class="bloque-foto">
             <img src="assets/yo.png" alt="Joshua" class="foto">
-        </div>
+        </section>
 
-        <div class="bloque-der">
+        <section class="bloque-der">
             <div class="info">
                 <h3>ACERCA DE MI</h3>
                 <p>Estudiante de Medios Interactivos en la USFQ con pasión por el desarrollo de software y experiencias digitales. Me especializo en crear soluciones funcionales utilizando herramientas como Processing y lógica de programación para diseño.</p>
@@ -42,8 +42,12 @@
                 <p>Portafolio de aplicaciones interactivas, videojuegos experimentales desarrollados y scripts de automatización visual.</p>
                 <a href="paginas/projects.html" class="btn">VER MAS ➔</a>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 20px; border-top: 1px solid #222;">
+        <p class="texto-consola" style="font-size: 13px; color: #666;">© 2026 Joshua Lozada | Medios Interactivos</p>
+    </footer>
 
     <div class="menu-overlay" id="menuOverlay">
         <div class="cerrar-menu" id="cerrarMenu">X</div>
@@ -65,6 +69,5 @@
             btnCerrar.addEventListener('click', () => { overlay.classList.remove('activo'); });
         }
     </script>
-
 </body>
 </html>
